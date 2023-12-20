@@ -166,5 +166,8 @@ public class MemberController {
         /*이메일 추가*/
 	}
 	
-	
+	@GetMapping("naverlogin")
+	public String nl() {
+		return  "L_member/naverlogin";
+	}
 }
