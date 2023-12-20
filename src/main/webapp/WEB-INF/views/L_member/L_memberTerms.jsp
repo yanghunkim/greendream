@@ -14,25 +14,33 @@
 
 
 <body>
-	<div id="te">
+	<div id="me">
 		<div id="start">
 			그린드림병원 회원가입을 시작합니다!<br>
 		</div>
 		<div id="please">
 			약관에 동의해 주세요.
 		</div>
-		<form action="memberId" method="post">
-			<div id="check">
+		<form action="memberEmail" method="post">
+			
+			<span id="check1">
 			<input type="checkbox" id="ch1" name="ch1" class="chk" > 그린드림병원 서비스 이용약관 동의(필수)<br>
+			</span>
+			<span id="check2">
 			<input type="checkbox" id="ch2" name="ch2" class="chk" > 그린드림병원 개인정보 수집 및 이용 동의(필수)<br>
+			</span>
+			<span id="check3">
 			<input type="checkbox" id="ch3" name="ch3" class="chk" > 광고성 정보 수신(선택)<br>
-			</div>
-			<input type="button" id="all" name="all" value="모두동의" onclick="allcheck()" ><br>
+			</span>
+			
+			<input type="button" id="all" name="all" value="모두동의" onclick="allcheck()" >
 			<input type="submit" name="next" id="next" disabled='disabled' value="다음" >
 		</form>
-	</div>	
+	</div>
+	<!-- 약관 -->
 </body>
-<jsp:include page="../K_Include/footer.jsp"></jsp:include>
 
 <script src="/resources/js/L_memberTerms.js"></script>
+<jsp:include page="../K_Include/footer.jsp"></jsp:include>
+
 </html>
