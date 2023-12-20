@@ -12,10 +12,7 @@ public interface MemberMapper {
 	// 아이디 찾기(Email)
 	public MemberDTO findIdEmail(MemberDTO member);
 	
-	// 비밀번호 찾기
-	public MemberDTO findPw(MemberDTO member);
-	
-	// 비밀번호 수정
-	public void updatePw(MemberDTO member);
+	// 비밀번호 찾기/수정
+	public void findPw(MemberDTO member);
 	
 }
