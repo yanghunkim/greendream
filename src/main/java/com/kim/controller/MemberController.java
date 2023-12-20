@@ -32,10 +32,6 @@ public class MemberController {
 	@Autowired
 	L_MemberService ls;
 	
-	@GetMapping("member")
-	public String mem() {
-		return "L_member/L_member";
-	}
 	@GetMapping("memberTerms")
 	public String mt() {
 		return  "L_member/L_memberTerms";
