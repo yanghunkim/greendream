@@ -1,28 +1,16 @@
 @charset "UTF-8";
 
-legend{
-	display:none;
-}
-
-fieldset{
-	width:800px;
-	border:0;
-}
-
-caption{
-	display: none;
-}
-
-td{
-	float:left;
-	
+table{
+	padding: 30px 30px 10px;
+    height: 300px;
 }
 
 th{
-	width:200px;
+	width: 110px;
+    text-align: left;
 }
 
-input{
+.inputNormal{
 	width: 400px;
     height: 35px;
     border: 0;
@@ -30,11 +18,11 @@ input{
     text-indent: 10px;
 }
 
-#checkLabel{
+#checkLabel, #sendLabel{
 	position:relative;
 }
 
-#emailChk{
+#emailChk, #emailSend{
 	border-radius: 3px;
     position: absolute;
     width: 100px;
@@ -44,4 +32,32 @@ input{
     margin-top: 5px;
     border: hidden;
 }
+
+button, #next {
+  width: 50px;
+  cursor: pointer;
+}
+
+#pw{
+	position: relative;
+	left:44px;
+}
+
+#openPw{
+    position: absolute;
+    right: 90px;
+    margin-top: 10px;
+
+}
+
+#viewPw{
+	position: relative;
+    right: 52px;
+    font-size: small;
+}
+
+#next{
+	width: 200px;
+    margin-bottom: 20px;
+    height: 40px;
 }
