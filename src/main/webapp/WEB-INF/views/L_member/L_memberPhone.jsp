@@ -10,13 +10,14 @@
 <title>꿈을그린병원 : 회원가입</title>
 </head>
 <body>
-${sessionScope}
+
 	<form action="memberEnd" method="post">
 	<input type="hidden" name="id" id="id" value="${sessionScope.id}">
 	<input type="hidden" name="pw" id="pw" value="${sessionScope.pw}">
 	<input type="hidden" name="gender" id="gender" value="${sessionScope.gender}">
 	<input type="hidden" name="name" id="name" value="${sessionScope.name}">
 	<input type="hidden" name="birth" id="birth" value="${sessionScope.year}-${sessionScope.month}-${sessionScope.day}">
+	<input type="hidden" name="email" id="email" value="${sessionScope.email}">
 		<div>휴대폰(필수)</div><br>
 		<input type="text" name="phone" id="phone" placeholder="11자 이내로 작성 가능" maxlength="11" onKeyUp="validPhone()"> <br>
 		<label id="lbPhone"></label><br>
