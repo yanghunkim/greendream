@@ -7,10 +7,10 @@
 <link rel="stylesheet" href="/resources/css/L_memberEnd.css"/>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>꿈을그린병원 : 회원가입 완료</title>
 </head>
 <body>
-${sessionScope}
+
 <div>반가워요, ${sessionScope.name} 회원님^^</div><br>
 <a href="/">메인페이지로가기</a> <a href="login">로그인 하러가기</a>
 </body>
