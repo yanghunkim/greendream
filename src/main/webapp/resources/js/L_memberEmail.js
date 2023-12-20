@@ -17,7 +17,7 @@ $(document).ready(function() {
             next.disabled = true;
 			return false;
 		}else{
-			message = "사용가능한 이메일 입니다."
+			message = "이메일 인증이 완료되었습니다."
 			$("#lbEmail").html(message).css("color", "green");
 	        $("#next").trigger("focus");
 	        next.disabled = false;
