@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.kim.mapper.L_MemberMapper">
+	<insert id="memberAdd">
+ 		insert into member 
+ 		values(#{id},#{pw},#{name},#{phone},#{pphone},#{birth},#{gender},#{email});
+ 	</insert>
+
+	<select id="selectId" resultType="boolean">
+		SELECT COUNT(*)
+		  FROM MEMBER
+		 WHERE ID = #{id}
+	</select>
+
+</mapper>

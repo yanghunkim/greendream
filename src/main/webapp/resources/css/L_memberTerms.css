@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+
+#te{
+	width: 500px;
+	margin: 0 auto;
+	padding: 10px;
+	background-color: skyblue;
+	
+}
+#start{
+	position: absolute;
+	font-size: 25px;
+}
+#please{
+	position: absolute;
+	font-size: 25px;
+	top: 170px;
+}
+#check{
+	position: relative;
+	font-size: 20x;
+
+}
+/* 아아아 */

@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+legend{
+	display:none;
+}
+
+fieldset{
+	width:800px;
+	border:0;
+}
+
+caption{
+	display: none;
+}
+
+td{
+	float:left;
+	
+}
+
+th{
+	width:200px;
+}
+
+input{
+	width: 400px;
+    height: 35px;
+    border: 0;
+    color: black;
+    text-indent: 10px;
+}
+
+#checkLabel{
+	position:relative;
+}
+
+#emailChk{
+	border-radius: 3px;
+    position: absolute;
+    width: 100px;
+    height: 25px;
+    left: 290px;
+    text-align: center;
+    margin-top: 5px;
+    border: hidden;
+}
+}

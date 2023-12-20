@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+bady{
+	background-image: url("https://pbs.twimg.com/media/EckuYhbU8AIXzaB.jpg:large");
+   /* background-image: url("../image/main_iu.png");
+   */
+    main_iu
+    background-size: cover;
+}
+td{
+	border-bottom: 1px solid #d3d3d3;
+	padding: 12px;
+}
+#t1{
+	margin: auto;
+	background-color : pink;
+	
+}
+
+#id{
+	height: 30px;
+	width: 180px;
+}
+#pw{
+	height: 30px;
+	width: 180px;
+}
+#pwc{
+	height: 30px;
+	width: 180px;
+}
+#name{
+	height: 30px;
+	width: 180px;
+}
+#id{
+	height: 30px;
+	width: 180px;
+}
+#address{
+	height: 30px;
+	width: 180px;
+}
+#addressd{
+	height: 30px;
+	width: 180px;
+}
+#pn1{
+	height: 30px;
+	width: 180px;
+}
+#pn2{
+	height: 30px;
+	width: 180px;
+}
+#pn3{
+	height: 30px;
+	width: 180px;
+}
+#ppn1{
+	height: 30px;
+	width: 180px;
+}
+#ppn2{
+	height: 30px;
+	width: 180px;
+}
+#ppn3{
+	height: 30px;
+	width: 180px;
+}
+#bd1{
+	height: 30px;
+	width: 180px;
+}
+#bd2{
+	height: 30px;
+	width: 180px;
+}
+#bd3{
+	height: 30px;
+	width: 180px;
+}
+#na{
+	height: 30px;
+	width: 180px;
+}
+#ot{
+	height: 30px;
+	width: 180px;
+}
