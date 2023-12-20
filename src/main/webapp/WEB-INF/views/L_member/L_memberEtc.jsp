@@ -10,7 +10,7 @@
 <title>꿈을그린병원 : 회원가입</title>
 </head>
 <body>
-${sessionScope}
+
 	<div>개인정보를 입력해주세요</div><br>
 	<div onmousemove="etc()" onkeydown="etc2()">
 	<form action="memberPhone" method="post">
