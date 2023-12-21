@@ -20,13 +20,14 @@
     font-family: binggrae;
     font-weight: 300;
     position: fixed;
-    bottom: 18%;
-    left: 0%;
-    width: 50%;
+    bottom: 9%;
+    left: 0;
+    width: 49%;
     max-width: 100%;
     height: auto;
     padding: 150px 0;
     color: #ffffff;
+    z-index: -1;
 }
 .kanimated-title .ktrack {
 	position: absolute;
@@ -91,7 +92,7 @@
     display: inline-block;
     position: relative;
     top: 18px;
-    left: 35px;
+    left: 15px;
     border-radius: 3px;
     background-color: white;
     width: 130px;
@@ -150,13 +151,13 @@
     border-radius: 15px 15px 0px 0px;
 }
 #kfreightcar dt span{
-	position:relative;
-	top: 5px;
-	color:white;
-	z-index:1;
-	padding:5px;
-	border-radius: 13px;
-	background-color: #009999;
+	position: relative;
+	left: -36.2%;
+    color: white;
+    z-index: 0;
+    padding: 10px;
+    border-radius: 13px;
+    background-color: #009999;
 }
 #kfreightcar dd {
 	display:inline-block;
