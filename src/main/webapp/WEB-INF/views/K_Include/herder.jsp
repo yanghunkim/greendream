@@ -157,6 +157,9 @@ p {
     padding-left: 50px;
     border-right: 1px solid;
 }
+#kmenu ul li:nth-child(5) {
+	border-right: none;
+}
 #kmenu ul li:nth-child(2) {
 	padding-right: 50px;
 }

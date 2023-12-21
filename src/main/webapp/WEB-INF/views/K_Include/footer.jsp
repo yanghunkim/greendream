@@ -20,14 +20,14 @@
     font-family: binggrae;
     font-weight: 300;
     position: fixed;
-    bottom: 9%;
+    bottom: 18.5%;
     left: 0;
     width: 49%;
     max-width: 100%;
     height: auto;
     padding: 150px 0;
     color: #ffffff;
-    z-index: -1;
+    z-index: 1;
 }
 .kanimated-title .ktrack {
 	position: absolute;
@@ -37,7 +37,7 @@
 	right: -93%; /* 움직일위치 */
 	bottom:-30%;
 }
-/* @keyframes marquee {
+/* 	@keyframes marquee {
   	  from { transform: translateX(0); }
  	  					
 	  to { transform: translateX(-2000%); }   
@@ -48,7 +48,7 @@
 		transform: translateY(calc(100% - 8rem)); 
 	    transform: translateY(calc(100% - 8rem));
 	}
-}  */
+}   */
 /* 여기까지가 움직이는 텍스트 입니다. */
 
 /* 여기서부터 트레인 css style 입니다. */
