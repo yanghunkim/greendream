@@ -22,7 +22,7 @@ th{
 	position:relative;
 }
 
-#emailChk, #emailSend{
+#emailSend, #okay{
 	border-radius: 3px;
     position: absolute;
     width: 100px;
@@ -33,8 +33,7 @@ th{
     border: hidden;
 }
 
-button, #next {
-  width: 50px;
+button {
   cursor: pointer;
 }
 

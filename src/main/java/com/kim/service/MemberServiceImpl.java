@@ -27,8 +27,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	// 비밀번호 찾기/수정
-	public void findPw(MemberDTO member) {
-		
+	public int findPw(MemberDTO member) {
+		return mm.findPw(member);
 	}
 	//
 }
