@@ -1,25 +1,32 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ page import="java.net.URLEncoder" %>
-<%@ page import="java.security.SecureRandom" %>
-<%@ page import="java.math.BigInteger" %>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>네이버로그인</title>
-  </head>
-  <body>
-  <%
-    String clientId = "kzaUf9S3rZNJ7Yc3CGVD";//애플리케이션 클라이언트 아이디값";
-    String redirectURI = URLEncoder.encode("http://localhost:8080/L_member/callback", "UTF-8");
-    SecureRandom random = new SecureRandom();
-    String state = new BigInteger(130, random).toString();
-    String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code"
-         + "&client_id=" + clientId
-         + "&redirect_uri=" + redirectURI
-         + "&state=" + state;
-    session.setAttribute("state", state);
- %>
-  <a href="<%=apiURL%>"><img height="50" src="http://static.nid.naver.com/oauth/small_g_in.PNG"/></a>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+  
+<!-- 네아로 SDK -->
+<script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
+  
+</head>
+<body>
+  
+    <!-- 네이버 로그인 버튼 생성 위치 -->
+    <div id="naverIdLogin"></div>
+  
+</body>
+<script type="text/javascript">
+    var naverLogin = new naver.LoginWithNaverId(
+        {
+            clientId: "kzaUf9S3rZNJ7Yc3CGVD",
+              // 본인의 Client ID로 수정, 띄어쓰기는 사용하지 마세요.
+            callbackUrl: "http://localhost:8080/callback",
+              // 본인의 callBack url로 수정하세요.
+            isPopup: false,
+            loginButton: {color: "white", type: 3, height: 60}
+              // 네이버 로그인버튼 디자인 설정. 한번 바꿔보세요:D
+        }
+    );
+naverLogin.init();
+</script>
 </html>
