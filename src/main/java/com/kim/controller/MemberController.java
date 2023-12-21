@@ -1,9 +1,13 @@
 package com.kim.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.util.Random;
 
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,14 +20,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kim.model.MemberDTO;
+import com.kim.model.NaverVo;
 import com.kim.service.L_MemberService;
 
 
 
 @Controller
+/*@RequiredArgsConstructor*/
 public class MemberController {
 	
 	@Autowired
@@ -166,8 +173,65 @@ public class MemberController {
         /*이메일 추가*/
 	}
 	
-	@GetMapping("naverlogin")
-	public String nl() {
-		return  "L_member/naverlogin";
-	}
+	@RequestMapping("/naverlogin")
+    public String naver() {
+        return "L_member/naverlogin";
+    }
+    
+    
+    @RequestMapping(value="/callback", method=RequestMethod.GET)
+    public String callBack(){
+        return "callback";
+    }
+    
+    @RequestMapping(value="naverSave", method=RequestMethod.POST)
+    public @ResponseBody String naverSave(/*@RequestParam("age") String age,*/ HttpServletRequest request,@RequestParam("birthday") String birthday, @RequestParam("email") String email, @RequestParam("gender") String gender, @RequestParam("id") String id, @RequestParam("name") String name, @RequestParam("nickName") String nickName/*, @RequestParam("birthyear") String birthyear*/) {
+    	
+	HttpSession session = request.getSession();
+	session.setAttribute("email", email);	
+	session.setAttribute("birthday", birthday);	
+	session.setAttribute("gender", gender);	
+	session.setAttribute("name", name);	
+	session.setAttribute("nickName", nickName);	
+    	
+    	
+    	
+    	
+    	
+    System.out.println("#############################################");
+  /*  System.out.println(age);*/
+    System.out.println(birthday);
+    System.out.println(email);
+    System.out.println(gender);
+    System.out.println(id);
+    System.out.println(name);
+    System.out.println(nickName);
+    /*System.out.println(birthyear);*/
+    System.out.println("#############################################");
+ 
+    NaverVo naver = new NaverVo();
+   /* naver.setAge(age);*/
+    naver.setBirthday(birthday);
+    naver.setEmail(email);
+    naver.setGender(gender);
+    naver.setId(id);
+    naver.setName(name);
+    naver.setNickName(nickName);
+    /*naver.setBirthYear(birthyear);*/
+    
+    
+   /* System.out.println("zzzzz =" +naver.getAge());*/
+ 
+    String result = "no";
+    
+    if(naver!=null) {
+        result = "ok";
+    }
+ 
+    return result;
+    
+    }
+
+	
+
 }
