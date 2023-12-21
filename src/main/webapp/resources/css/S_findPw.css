@@ -61,3 +61,8 @@ button, #next {
     margin-bottom: 20px;
     height: 40px;
 }
+#checkBtn01, #checkBtn02 {
+	width: 10%;
+	display: inline-block;
+	margin: 0;
+}

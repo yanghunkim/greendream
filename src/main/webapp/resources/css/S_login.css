@@ -1,15 +1,120 @@
 @charset "UTF-8";
-
+body {
+	overflow: hidden;
+}
+h3 {
+	margin-bottom: 28px;
+}
 .main {
-	position: relative;
+	width: 100%;
 	padding: 20px;
 }
-
-#id, #pw {
+#contaner {
+	width: 1400px;
+	height: 100vh;
+    display: flex;
+}
+#contaner a {
+	color: white;
+}
+.main div {
+	display: inline-block;
+}
+.main label {
+	display: inline-block;
+	margin:0;
+}
+.main label:nth-child(1){
+	padding:10px 15px 5px 15px;
+}
+.logBox, .loginHeader {
+	width: 600px;
+    background: #008888;
+    color: white;
+    padding-top: 10%;
+}
+#loginBtn {
+	width: 50px;
+    height: 25px;
+    margin-top: 11px;
+    border: 1px rgba(0, 0, 0, 0.7) solid;
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.2);
+}
+.main p {
+	display: inline-block;
+	font-family: none;
+	font-size:15px;
+}
+.txtBtn:nth-child(2){
+	padding-left:15px;
+}
+#id, #pw, #kid, #kemail {
     width: 300px;
     height: 30px;
     border: 0;
     color: black;
     text-indent: 10px;
-    
+}
+#pw{
+	margin: 5px -5px 0px 0px;
+	margin-left: 73px
+}
+#openPw {
+	width: 17px;
+    height: 18px;
+    margin: 0px 0px 0px 10px;
+    position: relative;
+    top: 4px;
+    right: 5px;
+}
+
+/* 여기서부터는 비회원 로그인 css style 입니다. ^O^  */
+#kemail {
+	display: inline-block;	
+}
+#kid, #kemail {
+	margin: 10px 15px 5px 15px;
+}
+#kcontainer01 {
+	margin-top: 28px;
+}
+#kcontainer02 {
+	margin: 10px 10px 10px 0px;
+}
+#kcontainer02 input{
+	width: 236px;
+    height: 30px;
+    border: 0;
+    margin: 0;
+    text-indent: 10px;
+    margin: 0px 0px 0px 10px;
+}
+#kcontainer02 label {
+	margin: 0;
+    display: inline-block;
+}
+#kcontainer02 span {
+	width: 50px;
+	height: 35px;
+    margin: 0;
+}
+#kcontainer03 {
+	width: 100%;
+}
+#kcontainer03 input {
+	width: 30px;
+	height: 17px;
+    margin: 15px 0px 0px 10px;
+}
+#kcontainer03 span {
+	text-align: left;
+    font-family: 'Noto Sans KR';
+}
+#kcell {
+    position: absolute;
+	left: 44.5%;
+    bottom: 25%;
+}
+#kcell span {
+	font-size: 25px;
 }
