@@ -56,70 +56,65 @@
 				<!-- 인증X 회원정보랑 비교해서 일치하는 값이 있으면 아이디 보여주고 없으면 '일치하는 회원정보가 없습니다' -->
 				<form id="S_findIdPhone" name="S_findIdPhone" action="S_findIdPhone" method="post" onsubmit="return formFindIdPhone()">
 
-					<fieldset>
 						<div class="tableForm01">
-							<table border="1">
-								<tbody>
-									<tr>
-										<th scope="row"><label for="userName1">이름</label><span class="star">*</span></th>
-										<td>
-											<input type="text" id="name" name="name" class="inputNormal" role="textbox" maxlength="35" />
-										</td>
-									</tr>
-									<tr>
-										<th scope="row"><label for="userPhone">휴대폰</label><span class="star">*</span></th>
-										<td>
-											<input type="text" id="phone" name="phone" class="inputSmall" role="textbox" />
-										</td>
-									</tr>
-									<tr>
-										<th></th>
-										<td>
-											<p>※ ('-'  제외하고 숫자만 입력)</p>
-										</td>
-									</tr>
-									<tr>
-										<th></th>
-										<td>
-											<button type="submit" class="yesBtn" id="check"><span class="button-text">확인</span></button>
-										</td>
-									</tr>
-								</tbody>
+							<table>
+								<tr>
+									<th scope="row"><label for="userName1">이름</label><span class="star">*</span></th>
+									<td>
+										<input type="text" id="name" name="name" class="inputNormal" role="textbox" maxlength="35" />
+									</td>
+									<td rowspan="2">
+										<button type="submit" class="yesBtn" id="check"><span class="button-text">확인</span></button>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="userPhone">휴대폰</label><span class="star">*</span></th>
+									<td>
+										<input type="text" id="phone" name="phone" class="inputSmall" role="textbox" />
+									</td>
+								</tr>
+								<tr>
+									<th></th>
+									<td>
+										<p>※ ('-'  제외하고 숫자만 입력)</p>
+									</td>
+									<td></td>
+								</tr>
 							</table>
 						</div>
-					</fieldset>
+						
 				</form>
 				</div>
 				
 				<div id="divRadio02">
 				<form id="S_findIdEmail" name="S_findIdEmail" action="S_findIdEmail" method="post" onsubmit="return formFindIdEmail()">
-					<fieldset>
+
 						<div class="tableForm02">
 							<table>
-								<tbody>
-									<tr>
-										<th scope="row"><label for="userName2">이름</label><span class="star">*</span></th>
-										<td>
-											<input type="text" id="name" name="name" class="inputNormal" role="textbox"/>
-										</td>
-									</tr>
-									<tr>
-										<th scope="row"><label for="userEmail2_1">이메일</label> <span class="star">*</span></th>
-										<td>
-											<div class="input-selectbox">
-												<input type="text" id="email" name="email" class="inputNormal" role="textbox"/>
 
-											</div>
-										</td>
-									</tr>
-								</tbody>
+								<tr>
+									<th scope="row"><label for="userName2">이름</label><span class="star">*</span></th>
+									<td>
+										<input type="text" id="name" name="name" class="inputNormal" role="textbox"/>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="userEmail2_1">이메일</label> <span class="star">*</span></th>
+									<td>
+										<div class="input-selectbox">
+											<input type="text" id="email" name="email" class="inputNormal" role="textbox"/>
+
+										</div>
+									</td>
+								</tr>
 							</table>
+							
 							<div class="btns-wrap" id="btn_ID">
 								<a href="login" class="notBtn" role="button"><span class="button-text">취소</span></a>
 								<button type="submit" class="yesBtn"><span class="button-text">확인</span></button>
 							</div>
 						</div>
-					</fieldset>
+
 				</form>
 				</div>						
 				
@@ -128,7 +123,7 @@
 		
 		<div class="other">
 			<a href="login" class="notBtn" role="button"><span class="button-text">로그인</span></a>
-			<a href="S_findPw" class="notBtn" role="button"><span class="button-text">비밀번호 찾기</span></a>
+			<a href="findPw" class="notBtn" role="button"><span class="button-text">비밀번호 찾기</span></a>
 		</div>
 	
 		<!-- 회원가입 -->	

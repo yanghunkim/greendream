@@ -28,16 +28,7 @@
 	and email=#{email}
 </select>
 
-
-<select id="findPw" resultType="com.kim.model.MemberDTO">
-	select * 
-	from member 
-	where id=#{id} 
-	and name=#{name} and 
-	email=#{email}
-</select>
-
-<update id="updatePw">
+<update id="findPw">
 	update member 
 	set pw=#{pw} 
 	where id=#{id}
