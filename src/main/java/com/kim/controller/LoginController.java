@@ -9,10 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -116,10 +118,15 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="findPw", method = RequestMethod.POST)
-	public String findPw(MemberDTO member, Model model) {
-		ms.findPw(member);
-		return "redirect:/";
+	public String findPw(MemberDTO member) {
+		int result = ms.findPw(member);
+		if(result==1) {
+			return "redirect:/";
+		}else {
+			return "findPw";
+		}
 	}
+	
 	
 	@ResponseBody
 	@RequestMapping(value = "/emailChecking", method = RequestMethod.POST)
@@ -136,7 +143,9 @@ public class LoginController {
                 "<br><br>" + 
                 "인증 번호는 " + checkNum + "입니다." + 
                 "<br>" + 
-                "해당 인증번호를 인증번호 확인란에 기입하여 주세요.";
+                "해당 인증번호를 인증번호 확인란에 기입하여 주세요." +
+                "<br>" +
+                "인증 후 비밀번호 변경이 가능합니다.";
       
         try {
         	 
@@ -155,4 +164,6 @@ public class LoginController {
         return Integer.toString(checkNum);
         /*이메일 추가*/
 	}
+
+	
 }
