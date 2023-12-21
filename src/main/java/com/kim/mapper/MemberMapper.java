@@ -13,6 +13,6 @@ public interface MemberMapper {
 	public MemberDTO findIdEmail(MemberDTO member);
 	
 	// 비밀번호 찾기/수정
-	public void findPw(MemberDTO member);
+	public int findPw(MemberDTO member);
 	
 }

@@ -10,6 +10,8 @@
 </head>
 <body>
 
+<jsp:include page = "K_Include/herder.jsp" ></jsp:include>
+
 <section id="contents">
 
 	<h2 class="findHeader">비밀번호 찾기</h2><br>
@@ -38,7 +40,7 @@
 						<td>
 							<label id="checkLabel">
 							<input type="text" id=check name="check" class="inputNormal" placeholder="인증번호를 입력하세요" />
-							<input type="button" class="yesBtn" id="okay" value="인증번호 확인">
+							<button type="button" class="yesBtn" id="okay">인증번호 확인</button>
 							</label>
 							<label id="lbEmail"></label>
 						</td>
@@ -46,7 +48,7 @@
 					<tr>
 						<th scope="row"><label for="userPw">새 비밀번호</label><span class="star">*</span></th>
 						<td>
-							<input type="password" id="pw" name="pw" class="inputNormal" placeholder="새 비밀번호" disabled="disabled" />
+							<input type="password" id="pw" name="pw" class="inputNormal" placeholder="새 비밀번호"/>
 							<label for="openPw" id="viewPw">
 							<input type="checkbox" id="openPw" name="openPw" onclick="visiblePw()" value="button"/>
 							비밀번호 표시
@@ -56,14 +58,14 @@
 					<tr>
 						<th scope="row"><label for="userPw">비밀번호 확인</label><span class="star">*</span></th>
 						<td>
-							<input type="password" id="checkPw" name="checkPw" class="inputNormal"placeholder="비밀번호 확인" disabled="disabled" />
+							<input type="password" id="checkPw" name="checkPw" class="inputNormal"placeholder="비밀번호 확인"/>
 							<label id="checkPwLbl"></label>
 						</td>
 					</tr>
 				</table>
 					
 				<div class="btns-wrap" id="btn_ID">
-					<input type="submit" name="next" id="next" disabled='disabled' value="확인" onclick="formClick()" >
+					<button type="submit" name="next" id="next" disabled="disabled" onclick="formClick()">확인</button>
 				</div>
 			</form>							
 		</div>
@@ -94,6 +96,7 @@
 		
 	</section>
 
+<jsp:include page = "K_Include/footer.jsp" ></jsp:include>
 
 <script src="/resources/js/S_findPw.js"></script>
 </body>
