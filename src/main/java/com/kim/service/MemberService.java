@@ -1,5 +1,6 @@
 package com.kim.service;
 
+import com.kim.model.GoogleDTO;
 import com.kim.model.MemberDTO;
 
 public interface MemberService {
@@ -14,4 +15,11 @@ public interface MemberService {
 	
 	// 비밀번호 찾기/수정
 	public int findPw(MemberDTO member);
+	
+	// 구글 로그인
+	public GoogleDTO googleLogin(GoogleDTO google);
+	
+	// 구글 회원가입
+	public void googleSign(GoogleDTO google);
+	
 }
