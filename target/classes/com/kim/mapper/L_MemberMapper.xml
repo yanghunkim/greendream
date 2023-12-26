@@ -18,15 +18,15 @@
 
 	<select id="naverCheck" resultType="com.kim.model.NaverVo">
 		select *
-		from naver
-		where n_email= #{n_email}
+		from naverlogin
+		where n_id= #{n_id}
 	</select>
 	
 	<insert id="naverAdd" >
-		insert into naver 
- 		values(#{n_email},#{n_birthday},#{n_gender},
+		insert into naverlogin 
+ 		values(#{n_id},#{n_birthday},#{n_gender},
  		#{n_name},#{n_nickName},#{n_mobile},#{n_birthyear},
- 		#{n_id});
+ 		#{n_email},#{id},#{phone},#{pphone});
 	</insert>
 	
 </mapper>
