@@ -1,4 +1,52 @@
 @charset "UTF-8";
+* {
+	margin: 0 auto;
+	padding: 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	list-style: none;
+	text-align: center;
+	font-family:'Noto Sans KR';
+}
+body {
+	background:#fffafa;
+}
+h2 {
+	color: #fffafa;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+h3 {
+	color:#fffafa;
+	font-size:18px;
+}
+
+a {
+	text-decoration: none;
+	color: #fffafa;
+	background:#009999;
+}
+
+p {
+	font-size: 20px;
+    width: 371px;
+}
+
+label {
+	margin:0;
+}
+
+#contents {
+	width: 1000px;
+	height: 1040px;
+}
+
+#container{
+	color:#fffafa;
+	background:#009999;
+	height: 710px;
+}
 
 table{
 	padding: 30px 30px 10px;
@@ -16,6 +64,7 @@ th{
     border: 0;
     color: black;
     text-indent: 10px;
+    text-align: left;
 }
 
 #checkLabel, #sendLabel{
@@ -37,16 +86,37 @@ button {
   cursor: pointer;
 }
 
-#pw{
+input{
 	position: relative;
-	left:44px;
 }
 
 #openPw{
-    position: absolute;
-    right: 90px;
+    position: relative;
+    width: 15px;
+    height: 15px;
     margin-top: 10px;
+    right: 19px;
+    color: #009999;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.1);
+}
 
+tr:nth-child(4) td > input {
+	left: 63px;
+}
+
+tr:nth-child(4) td span {
+	display: inline-block;
+    width: 100px;
+    height: 25px;
+    color: buttontext;
+	border-radius: 3px;
+    font-size: 13.5px;
+    background: buttonface;
+    padding-top:1px;
+    position: relative;
+	top:-2.5px;
+    right: 19px;
 }
 
 #viewPw{
@@ -56,12 +126,69 @@ button {
 }
 
 #next{
-	width: 200px;
-    margin-bottom: 20px;
-    height: 40px;
+	width: 70px;
+    height: 37px;
+    color: #009999;
+    background: #fffafa;
+    font-size: 20px;
+    font-weight: 700;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.1);
 }
+
+#btn_ID {
+	position: absolute;
+    top: 46.1%;
+    right: 35%;
+    width: 150px;
+    height: 45px;
+}
+
 #checkBtn01, #checkBtn02 {
 	width: 10%;
 	display: inline-block;
 	margin: 0;
+}
+
+#containerloginbox {
+	font-size: 22px;
+	font-weight: 700;
+}
+
+#containerloginbox spans {
+	color: #fffafa;
+}
+#containerloginbox a:nth-child(2) span {
+	border-left: 2px solid rgba( 255, 255, 255, 0.9);
+	padding-left: 10px;
+}
+
+.join-link {
+	margin: 0px;
+}
+
+.join-link a span {
+	display: inline-block;
+	font-size: 30px;
+	font-weight: 700;
+}
+
+.join-link p {
+	width: 600px;
+    font-size: 19px;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.SNS-text {
+	margin-bottom: 5px;
+}
+
+.join-SNS span {
+	display: block;
+}
+
+.join-SNS img {
+	width: 300px;
+	height: 45px;
 }
