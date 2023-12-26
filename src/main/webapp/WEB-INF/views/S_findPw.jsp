@@ -6,16 +6,16 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<link rel="stylesheet" href="resources/css/S_findPw.css?after" />
+<link rel="stylesheet" href="/resources/css/S_findPw.css" />
 </head>
 <body>
 
 <jsp:include page = "K_Include/herder.jsp" ></jsp:include>
-
+	
 <section id="contents">
-
-	<h2 class="findHeader">비밀번호 찾기</h2><br>
-	<h3 class="findHeader">비밀번호를 잊어버리셨나요? <br> 가입하신 이메일 인증을 통하여 비밀번호 변경이 가능합니다.</h3>
+	<div id="container">
+		<h2 class="findHeader">비밀번호 찾기</h2><br>
+		<h3 class="findHeader">비밀번호를 잊어버리셨나요? <br> 가입하신 이메일 인증을 통하여 비밀번호 변경이 가능합니다.</h3>
 
 		<div class="findPwEmail">
 			<form action="findPw" method="post">
@@ -51,7 +51,9 @@
 							<input type="password" id="pw" name="pw" class="inputNormal" placeholder="새 비밀번호"/>
 							<label for="openPw" id="viewPw">
 							<input type="checkbox" id="openPw" name="openPw" onclick="visiblePw()" value="button"/>
-							비밀번호 표시
+							<span>
+								비밀번호 표시
+							</span>
 							</label>
 						</td>
 					</tr>
@@ -70,9 +72,13 @@
 			</form>							
 		</div>
 		
-		<div>
-			<a href="login" class="notBtn" role="button"><span class="button-text">로그인</span></a>
-			<a href="find" class="notBtn" role="button"><span class="button-text">아이디 찾기</span></a>
+		<div id="containerloginbox">
+			<a href="login" class="notBtn" role="button">
+				<span class="button-text">로그인</span>
+			</a>
+			<a href="find" class="notBtn" role="button">
+				<span class="button-text">아이디 찾기</span>
+			</a>
 		</div>
 	
 		<!-- 회원가입 -->	
@@ -86,15 +92,27 @@
 		<!-- SNS 가입 회원 -->
 		<div class="join-SNS"> 		
 			<p class="SNS-text">
-				SNS 가입 회원은 가입하신 SNS에서 아이디 찾기가 가능합니다.
+				SNS 가입 회원은 가입하신 SNS에서<br>아이디 찾기가 가능합니다.
 			</p>
 			<!-- SNS 링크 -->
-			<a href="#" class="button" role="button"><span class="button-text">네이버</span></a>
-			<a href="#" class="button" role="button"><span class="button-text">카카오</span></a>
-			<a href="#" class="button" role="button"><span class="button-text">구글</span></a>
+			<a href="#" class="button" role="button">
+				<span class="button-text">
+					<img src="/resources/img/snsgoogle.png">
+				</span>
+			</a>
+			<a href="#" class="button" role="button">
+				<span class="button-text">
+					<img src="/resources/img/snskko.png" />
+				</span>
+			</a>
+			<a href="#" class="button" role="button">
+				<span class="button-text">
+					<img src="/resources/img/snsgoogle.png">
+				</span>
+			</a>
 		</div>
-		
-	</section>
+	</div>		
+</section>
 
 <jsp:include page = "K_Include/footer.jsp" ></jsp:include>
 

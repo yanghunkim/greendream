@@ -20,14 +20,14 @@
     font-family: binggrae;
     font-weight: 300;
     position: fixed;
-    bottom: 18.5%;
+    bottom: 8.5%;
     left: 0;
     width: 49%;
     max-width: 100%;
     height: auto;
     padding: 150px 0;
     color: #ffffff;
-    z-index: 1;
+    z-index: -1;
 }
 .kanimated-title .ktrack {
 	position: absolute;
@@ -152,7 +152,6 @@
 }
 #kfreightcar dt span{
 	position: relative;
-	left: -36.2%;
     color: white;
     z-index: 0;
     padding: 10px;
