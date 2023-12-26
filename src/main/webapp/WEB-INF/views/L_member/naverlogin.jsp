@@ -23,7 +23,7 @@
             callbackUrl: "http://localhost:8080/callback",
               // 본인의 callBack url로 수정하세요.
             isPopup: false,
-            loginButton: {color: "white", type: 3, height: 60}
+            loginButton: {color: "green", type: 3, height: 60}
               // 네이버 로그인버튼 디자인 설정. 한번 바꿔보세요:D
         }
     );

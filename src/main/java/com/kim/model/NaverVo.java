@@ -11,6 +11,28 @@ public class NaverVo {
 	private String n_birthyear;	
 	private String n_age;	
 	private String n_id;
+	private String id;
+	private String phone;
+	private String pphone;
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getPphone() {
+		return pphone;
+	}
+	public void setPphone(String pphone) {
+		this.pphone = pphone;
+	}
 	public String getN_email() {
 		return n_email;
 	}
@@ -66,7 +88,13 @@ public class NaverVo {
 		this.n_id = n_id;
 	}	
 	
-	
+	@Override
+	public String toString() {
+		return "NaverVo [n_email=" + n_email + ", n_birthday=" + n_birthday + ", n_gender=" + n_gender + ", n_name="
+				+ n_name + ", n_nickName=" + n_nickName + ", n_mobile=" + n_mobile + ", n_birthyear=" + n_birthyear
+				+ ", n_age=" + n_age + ", n_id=" + n_id + ", id=" + id + ", phone=" + phone + ", pphone=" + pphone
+				+ "]";
+	}
 
 
 }
