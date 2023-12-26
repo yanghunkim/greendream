@@ -1,5 +1,6 @@
 package com.kim.mapper;
 
+import com.kim.model.GoogleDTO;
 import com.kim.model.MemberDTO;
 
 public interface MemberMapper {
@@ -14,5 +15,7 @@ public interface MemberMapper {
 	
 	// 비밀번호 찾기/수정
 	public int findPw(MemberDTO member);
+
+	public GoogleDTO googleLogin(GoogleDTO google);
 	
 }

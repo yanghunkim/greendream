@@ -1,44 +1,25 @@
 package com.kim.controller;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URI;
 import java.util.Random;
 
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.web.util.UriComponentsBuilder;
 
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.kim.model.GoogleDTO;
 import com.kim.model.MemberDTO;
-import com.kim.service.LoginService;
+import com.kim.model.NaverVo;
 import com.kim.service.MemberService;
 
 @Controller
@@ -112,25 +93,6 @@ public class LoginController {
 		return "messageE";
 	}
 	
-/*	@RequestMapping(value="findIdEmail", method = RequestMethod.POST)
-	public String findIdEmail(MemberDTO member, HttpServletRequest request, HttpServletResponse response) 
-			throws UnsupportedEncodingException {
-		MemberDTO userinfo = ms.findIdEmail(member);
-		
-		request.setCharacterEncoding("UTF-8");
-		request.setAttribute("userinfo",userinfo);
-
-		return "redirect:/S_findIdEmail";
-	}
-	
-	@RequestMapping(value="S_findIdEmail", method = RequestMethod.GET)
-	public void findIdEmailPage(MemberDTO member, HttpSession session) {
-		MemberDTO userinfo = ms.findIdEmail(member);
-		session.setAttribute("userinfo", userinfo);
-		System.out.println(userinfo.getName());
-
-	}*/
-	
 	@RequestMapping(value="findPw", method = RequestMethod.GET)
 	public String findPwPage() {
 		return "S_findPw";
@@ -145,7 +107,6 @@ public class LoginController {
 			return "findPw";
 		}
 	}
-	
 	
 	@ResponseBody
 	@RequestMapping(value = "/emailChecking", method = RequestMethod.POST)
@@ -184,42 +145,50 @@ public class LoginController {
         /*이메일 추가*/
 	}
 	
-	@RequestMapping(value="google-callback", method = RequestMethod.GET)
-	public String google() {
+	
+    @RequestMapping(value="google-callback", method = RequestMethod.POST)
+    public String loginUrlGoogle(GoogleDTO google, HttpServletRequest request, @RequestParam("ID") String ID){
+    	HttpSession session = request.getSession();
+    	System.out.println(ID);
+    	session.setAttribute("ID", ID);
+       
+    	System.out.println(session.getAttribute("ID"));
+    	
+    	GoogleDTO googleinfo = ms.googleLogin(google);
+    	
+/*    	if (session.getAttribute("ID") != null) {*/
+/*    	if (googleinfo != null) {
+    		System.out.println("로그인 성공");
+    		return new ResponseEntity<>("ok",HttpStatus.OK);
+    	}else {
+    		System.out.println("로그인 실패");
+    		return new ResponseEntity<>("no",HttpStatus.INTERNAL_SERVER_ERROR);
+    }*/
+	    String result = "no";
 		
-		return "redirect:/";
-	}
+    	
+	
+	    if(googleinfo != null) {
+	
+	        result = "ok";
+	    }
+	    
+	    return result;
+
+}
+
+  
 
 	@RequestMapping(value="google", method = RequestMethod.GET)
 	public String googlePage() {
 		return "S_google";
 	}
 	
-/*	@RestController
-	@RequestMapping(value = "/login/oauth2", produces = "application/json")
-	public class GoogleController {
-
-	    LoginService  loginService;
-
-	    public void LoginController(LoginService loginService) {
-	        this.loginService = loginService;
-	    }
-
-	    @GetMapping("/code/{registrationId}")
-	    public void googleLogin(@RequestParam String code, @PathVariable String registrationId) {
-	        loginService.socialLogin(code, registrationId);
-	    }
-	}*/
+	@RequestMapping(value="googleSign", method = RequestMethod.POST)
+	public String googleSign(GoogleDTO google) {
+		ms.googleSign(google);
+		return "S_googleSign";
+	}
 	
-    @GetMapping("googoo")
-    public String goocal(Model model){
-        return "S_goo";
-    }
-
-    @GetMapping("/receiveAC")
-    public String receiveAC(@RequestParam("code") String code, Model model){
-        model.addAttribute("code",code);
-        return "receiveAC";
-    }
     
 }

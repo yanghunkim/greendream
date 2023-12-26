@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kim.mapper.MemberMapper;
+import com.kim.model.GoogleDTO;
 import com.kim.model.MemberDTO;
 
 @Service
@@ -30,5 +31,13 @@ public class MemberServiceImpl implements MemberService {
 	public int findPw(MemberDTO member) {
 		return mm.findPw(member);
 	}
-	//
+	
+	// 구글 로그인
+	public GoogleDTO googleLogin(GoogleDTO google) {
+		return mm.googleLogin(google);
+	}
+	
+	// 구글 회원가입
+	public void googleSign(GoogleDTO google) {
+	}
 }
