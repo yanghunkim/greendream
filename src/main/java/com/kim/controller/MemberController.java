@@ -1,13 +1,9 @@
 package com.kim.controller;
 
-import java.io.UnsupportedEncodingException;
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
 import java.util.Random;
 
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -137,6 +133,42 @@ public class MemberController {
 		
 	/*	aaaa*/
 	}
+	@GetMapping("memberNaverId")
+	public String mn() {
+
+		
+		return "L_member/L_memberNaverId";
+	}
+	
+	@PostMapping("memberNaverPhone")
+	public String men(HttpServletRequest request) {
+		String mid = request.getParameter("id");
+		// mid(가져온 값이랑) db 값이 일치하면 세션 저장
+		HttpSession session = request.getSession();
+		session.setAttribute("id", mid);
+		
+		return "L_member/L_memberNaverPhone";
+	}
+	
+	@PostMapping("memberNaverEnd")
+	public String mne(HttpServletRequest request,NaverVo naver) {
+/*		String gender = request.getParameter("gender");
+		String name = request.getParameter("name");
+		String birth = request.getParameter("birth");
+		String email = request.getParameter("email");
+		String phone = request.getParameter("phone");
+		// mid(가져온 값이랑) db 값이 일치하면 세션 저장
+		HttpSession session = request.getSession();
+		session.setAttribute("gender", gender);
+		session.setAttribute("name", name);
+		session.setAttribute("birth", birth);
+		session.setAttribute("email", email);
+		session.setAttribute("phone", phone);*/
+		ls.naverAdd(naver);
+		
+		return  "redirect:/";
+	}
+	
 	
 	@ResponseBody
 	@RequestMapping(value = "/emailAuth", method = RequestMethod.POST)
@@ -185,53 +217,65 @@ public class MemberController {
     }
     
     @RequestMapping(value="naverSave", method=RequestMethod.POST)
-    public @ResponseBody String naverSave(/*@RequestParam("age") String age,*/ HttpServletRequest request,@RequestParam("birthday") String birthday, @RequestParam("email") String email, @RequestParam("gender") String gender, @RequestParam("id") String id, @RequestParam("name") String name, @RequestParam("nickName") String nickName/*, @RequestParam("birthyear") String birthyear*/) {
-    	
+    public @ResponseBody String naverSave(NaverVo naver, HttpServletRequest request,
+    		@RequestParam("n_birthyear") String n_birthyear, @RequestParam("n_email") String n_email, 
+    		@RequestParam("n_gender") String n_gender, @RequestParam("n_name") String n_name, 
+    		@RequestParam("n_nickName") String n_nickName, @RequestParam("n_mobile") String n_mobile, 
+    		@RequestParam("n_birthday") String n_birthday,
+    		@RequestParam("n_id") String n_id ) {
+	    	
 	HttpSession session = request.getSession();
-	session.setAttribute("email", email);	
-	session.setAttribute("birthday", birthday);	
-	session.setAttribute("gender", gender);	
-	session.setAttribute("name", name);	
-	session.setAttribute("nickName", nickName);	
+		session.setAttribute("n_email", n_email);	
+		session.setAttribute("n_birthday", n_birthday);	
+		session.setAttribute("n_gender", n_gender);	
+		session.setAttribute("n_name", n_name);	
+		session.setAttribute("n_nickName", n_nickName);	
+		session.setAttribute("n_mobile", n_mobile);	
+		session.setAttribute("n_birthyear", n_birthyear);	
+		session.setAttribute("n_id", n_id);	
     	
+	    System.out.println("#############################################");
+	    System.out.println(n_email);
+	    System.out.println(n_birthday);
+	    System.out.println(n_gender);
+	    System.out.println(n_name);
+	    System.out.println(n_nickName);
+	    System.out.println(n_mobile);
+	    System.out.println(n_birthyear);
+	    System.out.println(n_id);
+
+	    System.out.println("#############################################");
+	    /*	 	 	  NaverVo naver = new NaverVo();
+
+   		naver.setBirthday(n_birthday);
+	    naver.setEmail(n_gender);
+	    naver.setGender(n_name);
+	    naver.setId(n_mobile);
+	    naver.setName(n_nickName);
+	    naver.setNickName(n_email);
+	    naver.setNickName(n_birthyear);
+	    naver.setNickName(n_age);
+	    naver.setNickName(n_id);*/
+	    System.out.println("#############################################");
+
+
+
+	   
+	    String result = "no";
+	 
+	/*    ls.naverAdd(naver);*/
+	    NaverVo userinfo = ls.naverCheck(naver);
     	
-    	
-    	
-    	
-    System.out.println("#############################################");
-  /*  System.out.println(age);*/
-    System.out.println(birthday);
-    System.out.println(email);
-    System.out.println(gender);
-    System.out.println(id);
-    System.out.println(name);
-    System.out.println(nickName);
-    /*System.out.println(birthyear);*/
-    System.out.println("#############################################");
- 
-    NaverVo naver = new NaverVo();
-   /* naver.setAge(age);*/
-    naver.setBirthday(birthday);
-    naver.setEmail(email);
-    naver.setGender(gender);
-    naver.setId(id);
-    naver.setName(name);
-    naver.setNickName(nickName);
-    /*naver.setBirthYear(birthyear);*/
-    
-    
-   /* System.out.println("zzzzz =" +naver.getAge());*/
- 
-    String result = "no";
-    
-    if(naver!=null) {
+	
+    if(userinfo != null) {
+
         result = "ok";
     }
- 
-    return result;
     
-    }
+    return result;
 
-	
+}
+
+
 
 }

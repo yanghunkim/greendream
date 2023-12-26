@@ -27,7 +27,7 @@ body {
     text-align: center;
 }
 h1{
-	font-size: 50px;
+	font-size: 30px;
 	font-family: 'Sunflower', sans-serif;
 	color: #009999;
 	margin: 0;
@@ -38,12 +38,12 @@ h3 {
 	font-size:30px
 }
 h4 {
-	font-size: 19px;
+	font-size: 16px;
     color: #009999;
-    margin-left:10px;
+    margin-left: 9px;
     margin-bottom: 15px;
     padding-bottom: 5px;
-    text-align: left;
+    font-family: 'Noto Sans KR';
 }
 p {
 	font-family:'Noto Sans KR', sans-serif;
