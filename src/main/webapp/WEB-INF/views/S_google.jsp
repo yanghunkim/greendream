@@ -7,52 +7,80 @@
 <title>Insert title here</title>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 
+<meta
+  http-equiv="Cross-Origin-Opener-Policy"
+  content="same-origin-allow-popups"
+/>
+
 </head>
 <body>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
-function doGoogleLogin() {
-	const url='https://accounts.google.com/o/oauth2/v2/auth?client_id=' +
-				'623144461116-btkfbaaccvpveju1flad3oo89ec88l6h.apps.googleusercontent.com' +
-				'&redirect_uri=' + 'http://localhost:8080/google-callback' +
-				'&response_type=code' +
-				'&scope=email profile';
-	
-	document.location.href = url;
-	}
+  
+  function handleCredentialResponse(response) {
+  	const responsePayload = parseJwt(response.credential);
+		console.log("ID: " + responsePayload.sub);
+		console.log('Full Name: ' + responsePayload.name);
+		console.log('Given Name: ' + responsePayload.given_name);
+		console.log('Family Name: ' + responsePayload.family_name);
+		console.log("Image URL: " + responsePayload.picture);
+		console.log("Email: " + responsePayload.email);
+		
+/* 		String ID = responsePayload.sub;
+		String FullName = responsePayload.name;
+		String GivenName = responsePayload.given_name;
+		String familyName = responsePayload.family_name;
+		String ImageURL = responsePayload.picture;
+		String Email = responsePayload.email;
 
+*/		
+        $.ajax({
+            type: 'post',
+            url: 'google-callback',
+            data: {'ID':responsePayload.sub, 'FullName':responsePayload.name, 'GivenName':responsePayload.given_name, 'familyName':responsePayload.family_name, 'ImageURL':responsePayload.picture, 'Email':responsePayload.email},
+            dataType: 'text',
+            success: function(result) {
+            	console.log(result);
+                if(result=='ok') {
+                    location.replace("http://localhost:8080/"); 
+                }else if(result=='no') {
+                    console.log('실패');
+                    location.replace("http://localhost:8080/googleSign");
+                }
+            },
+            error: function(result) {
+                console.log('오류 발생');
+            }
+        })
 
+  }
+  function parseJwt (token) {
+      var base64Url = token.split('.')[1];
+      var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
 
-  function onSignIn(googleUser) {
-    // Useful data for your client-side scripts:
-    var profile = googleUser.getBasicProfile();
-    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-    console.log('Full Name: ' + profile.getName());
-    console.log('Given Name: ' + profile.getGivenName());
-    console.log('Family Name: ' + profile.getFamilyName());
-    console.log("Image URL: " + profile.getImageUrl());
-    console.log("Email: " + profile.getEmail());
-
-    // The ID token you need to pass to your backend:
-    var id_token = googleUser.getAuthResponse().id_token;
-    console.log("ID Token: " + id_token);
-    console.log("access_token: " + googleUser.getAuthResponse().access_token);
- 
+      return JSON.parse(jsonPayload);
   };
+ 	window.onload = function () {
+    google.accounts.id.initialize({
+      client_id: "623144461116-btkfbaaccvpveju1flad3oo89ec88l6h.apps.googleusercontent.com",
+      callback: handleCredentialResponse
+    });
+    google.accounts.id.renderButton(
+      document.getElementById("googleClick"),
+      { theme: "outline", size: "large" }  // customization attributes
+    );
+    google.accounts.id.prompt(); // also display the One Tap dialog
+  }
+
 </script>
-<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">
-<button onclick="doGoogleLogin()">구글 로그인</button>
 
-<a href="googoo">구글</a>
-<a href="https://accounts.google.com/o/oauth2/v2/auth?
-scope=https://www.googleapis.com/auth/cloud-identity.devices.lookup&
-access_type=offline&
-include_granted_scopes=true&
-state=state_parameter_passthrough_value&
-redirect_uri=http://localhost:8080/google-callback&
-response_type=code&
-client_id=623144461116-btkfbaaccvpveju1flad3oo89ec88l6h.apps.googleusercontent.com">google</a>
 
-</div>
+<div id="googleClick"></div>
 
 </body>
 </html>
