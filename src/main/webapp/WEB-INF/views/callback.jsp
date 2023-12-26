@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
-<script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
 <script>
 
     var naverLogin = new naver.LoginWithNaverId({
@@ -25,34 +25,36 @@
  
     if (status) {
         /* console.log(naverLogin.user); */
-        var age = naverLogin.user.getAge();
+   
         var birthday = naverLogin.user.getBirthday();
         var email = naverLogin.user.getEmail();
         var gender = naverLogin.user.getGender();
         var id = naverLogin.user.getId();
         var name = naverLogin.user.getName();
+        var mobile = naverLogin.user.getMobile();
         var nickName = naverLogin.user.getNickName();
-        /* var birthyear = naverLogin.user.getBirthyear(); */
-        console.log(age);
+        var birthyear = naverLogin.user.getBirthyear();
+
         console.log(birthday);
         console.log(email);
         console.log(gender);
         console.log(id);
         console.log(name);
         console.log(nickName);
-       /*  console.log(birthyear); */
+        console.log(mobile);
+        console.log(birthyear); 
 	        $.ajax({
 	            type: 'post',
 	            url: 'naverSave',
-	            data: {/* 'age':age, */ 'birthday':birthday, 'email':email, 'gender':gender, 'id':id, 'name':name, 'nickName':nickName},
+	            data: {'n_id':id, 'n_mobile':mobile, 'n_birthday':birthday, 'n_email':email, 'n_gender':gender, 'n_name':name, 'n_nickName':nickName, 'n_birthyear':birthyear},
 	            dataType: 'text',
 	            success: function(result) {
-	                if(result=='ok') {
-	                	alert(nickName)
+	                if(result=="ok") {
+	                	console.log('로그인')
 	                    location.replace("http://localhost:8080/") 
-	                } else if(result=='no') {
-	                    console.log('실패')
-	                    location.replace("http://localhost:8080/naverlogin")
+	                } else if(result=="no") {
+	                    console.log('회원가입')
+	                    location.replace("http://localhost:8080/memberNaverId")
 	                }
 	            },
 	            error: function(result) {
