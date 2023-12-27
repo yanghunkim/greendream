@@ -35,5 +35,5 @@
 	</form>
 	</div>
 </body>
-<script src="/resources/js/L_memberNaverPhone.js"></script>
+<script src="/resources/js/L_memberPhone.js"></script>
 </html>

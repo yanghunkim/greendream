@@ -17,13 +17,13 @@ function allcheck(){
 	const ch2ch = ch2.checked;
 	const ch3ch = ch3.checked;
 	if(ch1ch&&ch2ch&&ch3ch){
-		next.disabled = true;
+		next1.disabled = true;
 		for(const checkbox of checkboxes){
 	        checkbox.checked = false;
 	       
 		}
 	}else{
-		next.disabled = false;
+		next1.disabled = false;
 		for(const checkbox of checkboxes){
 	        checkbox.checked = true;
 	        
@@ -83,9 +83,9 @@ function check(){
 	const ch1ch = ch1.checked;
 	const ch2ch = ch2.checked;
 	if(ch1ch&&ch2ch){
-		next.disabled = false;
+		next1.disabled = false;
 	}else{
-		next.disabled = true;
+		next1.disabled = true;
 	}
 }
 

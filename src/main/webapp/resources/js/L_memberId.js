@@ -35,7 +35,7 @@ $(document).ready(function() {
 			$("#label1").css("color", "red").text("공백은 ID로 사용할 수 없습니다.");
 			return false;
 		}
-         
+        console.log(id);
         $.ajax({
             type:'post', //post 형식으로 controller 에 보내기위함!!
             url:"memberIdCheck", // 컨트롤러로 가는 mapping 입력

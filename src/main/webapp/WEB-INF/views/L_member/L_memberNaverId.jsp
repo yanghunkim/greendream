@@ -29,5 +29,5 @@
 	<!-- 아이디 -->
 </body>
 <jsp:include page="../K_Include/footer.jsp"></jsp:include>
-<script src="/resources/js/L_memberNaverId.js"></script>
+<script src="/resources/js/L_memberId.js"></script>
 </html>

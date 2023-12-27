@@ -54,7 +54,7 @@
 	                    location.replace("http://localhost:8080/") 
 	                } else if(result=="no") {
 	                    console.log('회원가입')
-	                    location.replace("http://localhost:8080/memberNaverId")
+	                    location.replace("http://localhost:8080/memberNaver")
 	                }
 	            },
 	            error: function(result) {
