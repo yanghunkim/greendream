@@ -34,7 +34,7 @@ public class MemberController {
 	
 	@Autowired
 	L_MemberService ls;
-	
+	/*dfdf*/
 	@GetMapping("member")
 	public String mt() {
 		return  "L_merBer";

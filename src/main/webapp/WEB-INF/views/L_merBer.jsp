@@ -20,7 +20,7 @@
 <script src="/resources/js/L_memberPhone.js"></script>
 <body>
 <jsp:include page="K_Include/herder.jsp"></jsp:include>
-	<form>
+	<!-- <form> -->
 	
 <!--                                             회원가입 페이지 입니다.                                          -->	
 		<div id="sectioncontainer01" class="containerbox">
