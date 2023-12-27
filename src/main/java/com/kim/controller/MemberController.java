@@ -35,9 +35,9 @@ public class MemberController {
 	@Autowired
 	L_MemberService ls;
 	
-	@GetMapping("memberTerms")
+	@GetMapping("member")
 	public String mt() {
-		return  "L_member/L_memberTerms";
+		return  "L_merBer";
 	}
 	@PostMapping("memberEmail")
 	public String mee() {
