@@ -1,5 +1,6 @@
 package com.kim.mapper;
 
+import com.kim.model.KakaoDTO;
 import com.kim.model.MemberDTO;
 import com.kim.model.NaverVo;
 
@@ -18,4 +19,19 @@ public interface L_MemberMapper {
 	
 	// naver 회원가입 여부 체크
 	public NaverVo naverCheck(NaverVo naver);
+	
+	// kakao 회원가입
+	public void kakaoAdd(KakaoDTO kakao);
+	
+	// kakao 회원가입 여부 체크
+	public KakaoDTO kakaoCheck(KakaoDTO kakao);
+	
+	// 회원정보 상세
+	public MemberDTO detail(MemberDTO member);
+	
+	// 회원정보 수정
+	public void modify(MemberDTO member);
+	
+	// 회원정보 삭제
+	public void remove(MemberDTO member);
 }
