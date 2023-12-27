@@ -38,12 +38,12 @@
 	<select id="googleLogin" resultType="com.kim.model.GoogleDTO">
 		select *
 		from googlelogin
-		where Email=#{Email}
+		where ID=#{ID}
 	</select>
 	
 	<insert id="googleSign">
 		insert into googlelogin 
-		values(#{ID},#{FullName},#{GivenName},#{familyName},#{ImageURL},#{Email});
+		values(#{ID},#{FullName},#{GivenName},#{familyName},#{ImageURL},#{Email},#{googleEmail});
 	</insert>
 
 </mapper>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>꿈을그린병원 : google 로그인</title>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 
 <meta
@@ -46,7 +46,7 @@
                 if(result=='ok') {
                     location.replace("http://localhost:8080/"); 
                 }else if(result=='no') {
-                    console.log('실패');
+                    alert("아이디가 존재하지 않습니다.\n구글 회원가입 후 로그인 가능합니다.");
                     location.replace("http://localhost:8080/googleSign");
                 }
             },

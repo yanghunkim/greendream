@@ -7,6 +7,7 @@ public class GoogleDTO {
 	String familyName;
 	String ImageURL;
 	String Email;
+	String googleEmail;
 	
 	public String getID() {
 		return ID;
@@ -43,12 +44,18 @@ public class GoogleDTO {
 	}
 	public void setEmail(String email) {
 		Email = email;
+	}	
+	public String getGoogleEmail() {
+		return googleEmail;
+	}
+	public void setGoogleEmail(String googleEmail) {
+		this.googleEmail = googleEmail;
 	}
 	
 	@Override
 	public String toString() {
 		return "GoogleDTO [ID=" + ID + ", FullName=" + FullName + ", GivenName=" + GivenName + ", familyName="
-				+ familyName + ", ImageURL=" + ImageURL + ", Email=" + Email + "]";
+				+ familyName + ", ImageURL=" + ImageURL + ", Email=" + Email + ", googleEmail=" + googleEmail + "]";
 	}
 	
 }
