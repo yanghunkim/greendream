@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -145,50 +146,74 @@ public class LoginController {
         /*이메일 추가*/
 	}
 	
-	
     @RequestMapping(value="google-callback", method = RequestMethod.POST)
-    public String loginUrlGoogle(GoogleDTO google, HttpServletRequest request, @RequestParam("ID") String ID){
+    public  @ResponseBody String loginUrlGoogle(GoogleDTO google, HttpServletRequest request, 
+    		@RequestParam("ID") String ID, @RequestParam("FullName") String FullName, @RequestParam("FullName") String GivenName, 
+    		@RequestParam("familyName") String familyName, @RequestParam("ImageURL") String ImageURL, @RequestParam("Email") String Email){
+    	
     	HttpSession session = request.getSession();
-    	System.out.println(ID);
+
+/*    	System.out.println(ID);*/
     	session.setAttribute("ID", ID);
-       
+    	session.setAttribute("FullName", FullName);
+    	session.setAttribute("GivenName", GivenName);
+    	session.setAttribute("familyName", familyName);
+    	session.setAttribute("ImageURL", ImageURL);
+    	session.setAttribute("Email", Email);
+
+    	System.out.println(ID);
     	System.out.println(session.getAttribute("ID"));
     	
     	GoogleDTO googleinfo = ms.googleLogin(google);
     	
+	    String result = "no";
+	    
 /*    	if (session.getAttribute("ID") != null) {*/
-/*    	if (googleinfo != null) {
+    	if(googleinfo != null) {
+/*            session.setMaxInactiveInterval(60 * 60);*/
     		System.out.println("로그인 성공");
-    		return new ResponseEntity<>("ok",HttpStatus.OK);
+    		
+	        result = "ok";
+	        
     	}else {
     		System.out.println("로그인 실패");
-    		return new ResponseEntity<>("no",HttpStatus.INTERNAL_SERVER_ERROR);
-    }*/
-	    String result = "no";
-		
-    	
-	
-	    if(googleinfo != null) {
-	
-	        result = "ok";
-	    }
-	    
-	    return result;
-
-}
-
   
+    	}
+	    return result;
+	    
+    }
 
 	@RequestMapping(value="google", method = RequestMethod.GET)
 	public String googlePage() {
 		return "S_google";
 	}
 	
-	@RequestMapping(value="googleSign", method = RequestMethod.POST)
-	public String googleSign(GoogleDTO google) {
-		ms.googleSign(google);
-		return "S_googleSign";
+	@RequestMapping(value="googleSign", method = RequestMethod.GET)
+	public String googleSignPage() {
+		return "S_gooleSign";
 	}
 	
+	
+	@RequestMapping(value="googleSign", method = RequestMethod.POST)
+	public String googleSign(GoogleDTO google, HttpServletRequest request) {
+		String ID = request.getParameter("ID");
+		String googleEmail = request.getParameter("googleEmail");
+		HttpSession session = request.getSession();
+		System.out.println(googleEmail);
+    	System.out.println(ID);
+    	/*session.setAttribute("googleEmail", ID);*/
+    	
+		ms.googleSign(google);
     
+		GoogleDTO googleinfo = ms.googleLogin(google);
+		System.out.println(googleinfo);
+		if(googleinfo != null) {
+			session.setAttribute("login", googleinfo);
+			return "redirect:/";	
+		} else {
+			return "redirect:/google";
+		}
+	}
+	
+	
 }

@@ -39,5 +39,6 @@ public class MemberServiceImpl implements MemberService {
 	
 	// 구글 회원가입
 	public void googleSign(GoogleDTO google) {
+		mm.googleSign(google);
 	}
 }

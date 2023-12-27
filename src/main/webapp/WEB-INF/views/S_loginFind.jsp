@@ -5,7 +5,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>꿈을그린병원 : 아이디찾기</title>
 
 <link rel="stylesheet" href="resources/css/S_loginFind.css">
 <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700;&display= swap" rel="stylesheet">

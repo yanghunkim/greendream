@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>꿈을그린병원 : 이메일로 아이디 찾기</title>
 </head>
 <body>
 	<script type="text/javascript">
