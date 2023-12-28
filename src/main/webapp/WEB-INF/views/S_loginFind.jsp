@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>꿈을그린병원 : 아이디찾기</title>
 
-<link rel="stylesheet" href="resources/css/S_loginFind.css">
+<link rel="stylesheet" href="/resources/css/S_loginFind.css">
 <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700;&display= swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;&display=swap" rel="stylesheet">
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -160,27 +160,20 @@
 			<div class="join-SNS">
 				<p class="SNS-text">SNS 가입 회원은 가입하신 SNS에서 아이디 찾기가 가능합니다.</p>
 				<!-- SNS 링크 -->
-				<div class="telBox">
-					<div id="S-sns" class="google">
-						<a href="/oauth2/authorization/google" class="btn btn-sm btn-success active" role="button">
-	  						<img alt="" src="./resources/img/snsgoogle.png">
-	  					</a>
+					<div class="telBox">
+
+						<div id="S-sns" class="google">
+							<jsp:include page="K_Include/S_google.jsp"></jsp:include>
+						</div>
+
+						<div id="K-sns" class="kakao"></div>
+
+						<div id="L-sns" class="naver"></div>
+
 					</div>
-					<div id="K-sns" class="kakao">
-						<a id="kakao-login-btn" href="javascript:loginWithKakao()"> 
-							<img src="/resources/img/snskko.png" />
-						</a> 
-						<p id="token-result"></p>
-					</div>
-					<div id="L-sns" class="naver">
-						<a href="">
-							<img src="/resources/img/snsnaver.png" />
-						</a>
-					</div>
-				</div>
-				<div id="snsbox">
+					<div id="snsbox">
 						<h3>SNS 로그인</h3>
-				</div>
+					</div>
 			</div>
 		</div>
 	</div>
