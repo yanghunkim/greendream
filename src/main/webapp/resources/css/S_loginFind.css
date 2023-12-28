@@ -170,10 +170,19 @@ label {
 	padding-top: 20px;
 }
 
-.telBox div img {
-	width: 300px;
-	height: 45px;
+#K-sns {
+	position: relative;
 }
+
+#S-sns {
+	position: relative;
+	left: 40%;
+}
+
+#L-sns {
+	position: relative;
+}
+
 
 #snsbox h3 {
 	font-size: 15px;
