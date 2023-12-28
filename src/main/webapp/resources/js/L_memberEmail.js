@@ -1,7 +1,7 @@
 
 //다음 버튼
-const next = document.getElementById('next');
-console.log(next);
+const next02 = document.getElementById('next02');
+console.log(next02);
 
 $(document).ready(function() { 
  	
@@ -14,13 +14,13 @@ $(document).ready(function() {
 			message = "인증번호가 일치하지 않습니다.";
     		$("#lbEmail").html(message).css("color", "green");
             $("#email").trigger("focus");
-            next.disabled = true;
+            next02.disabled = true;
 			return false;
 		}else{
 			message = "이메일 인증이 완료되었습니다."
 			$("#lbEmail").html(message).css("color", "green");
-	        $("#next").trigger("focus");
-	        next.disabled = false;
+	        $("#next02").trigger("focus");
+	        next02.disabled = false;
 		}
 		
 	});

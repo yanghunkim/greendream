@@ -1,16 +1,15 @@
 
-// 입력 아이디
-let id = document.getElementById("id");
-console.log(id)
+
 // id 정규식
 let regId = /^[A-Za-z0-9]{8,20}$/;
 
 //입력 아이디
 
 function validId(){
+	let id = document.getElementById("id");
 	if(regId.test(id.value)){
 		//alert("제대로 입력함")
-		
+		console.log(id.value);
 		return true;
 	}else{
 		//alert("제대로 입력안함")
@@ -18,9 +17,7 @@ function validId(){
 		return false;
 	}
 }
-//다음 버튼
-const next = document.getElementById('next');
-console.log(next);
+
 
 //중복 체크
 $(document).ready(function() {
@@ -45,7 +42,7 @@ $(document).ready(function() {
                 if(result == true){ // 만약 성공할시
                 	if(validId()){
                 		 message = "사용 가능한 아이디입니다.";
-                         next.disabled = false;
+                		 next03.disabled = false;
                          $("#lbId").html(message).css("color", "green");
                          $("#id").trigger("focus");
                 	}else{
@@ -56,7 +53,7 @@ $(document).ready(function() {
                    
                  
              }else{ // 만약 실패할시
-            	 next.disabled = true;
+            	 next03.disabled = true;
             	 
             	 if(validId()){
             		 console.log(next.value);
