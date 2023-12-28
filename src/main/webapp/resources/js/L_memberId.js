@@ -1,5 +1,6 @@
 
 
+ 
 // id 정규식
 let regId = /^[A-Za-z0-9]{8,20}$/;
 
@@ -20,9 +21,9 @@ function validId(){
 
 
 //중복 체크
-$(document).ready(function() {
+
  
-    
+$(document).ready(function() {
     
     $("#checkId").click(function(){
     
