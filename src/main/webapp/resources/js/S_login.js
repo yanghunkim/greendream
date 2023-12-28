@@ -11,11 +11,11 @@
 	
 	function formValidLogin(){
 		if(id.value.length==0){
-			alert("아이디/진찰권 번호(환자번호)를 입력하세요")
+			alert("아이디를 입력하세요")
 			return false;
 		// 데이터베이스에 아이디가 존재하지 않으면 혹은 아이디 형식에 맞지 않으면
 		}if(!regId.test(id.value)){
-			alert("아이디/진찰권 번호(환자번호)가 존재하지 않습니다")
+			alert("아이디가 존재하지 않습니다")
 			id.focus();
 			return false;
 		}else{
@@ -28,6 +28,10 @@
 			alert("비밀번호가 일치하지 않습니다")
 			pw.focus();
 			return false;
+		}if(!openPw.test(pw.value)){
+			alert("비밀번호가 일치하지 않습니다")
+			pw.focus();
+			return false;	
 		}else{
 			
 		}

@@ -334,7 +334,7 @@ public class MemberController {
 
     }
 	// 회원 정보
-	@GetMapping("memberdetail")
+	@PostMapping("memberdetail")
 	 public String mdmd(MemberDTO member, Model model, HttpSession session) {
 		System.out.println(member);
 		MemberDTO detail = (MemberDTO)session.getAttribute("login");
