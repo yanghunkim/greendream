@@ -38,7 +38,7 @@ public class MemberController {
 	@Autowired
 	L_MemberService ls;
 	
-	@GetMapping("t1")
+/*	@GetMapping("t1")
 	public String t12() {
 		return  "test";
 	}
@@ -56,7 +56,13 @@ public class MemberController {
 		}
 		return new ResponseEntity<>(result, HttpStatus.OK);
 		
+	}*/
+	
+	@GetMapping("member")
+	public String m1() {
+		return  "L_merBer";
 	}
+	
 	@PostMapping("memberEmail")
 	public String mee() {
 		return "L_member/L_memberEmail";

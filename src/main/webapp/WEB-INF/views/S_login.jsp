@@ -17,8 +17,12 @@
 <script>
 https://accounts.google.com/o/oauth2/v2/auth
 </script>
+
+
+
 <body>
 <jsp:include page="K_Include/herder.jsp"></jsp:include>
+
 <div id="contaner">
 	<div class="logBox">
 		<div id="logincontaner01">
@@ -52,22 +56,15 @@ https://accounts.google.com/o/oauth2/v2/auth
 			<div class="telBox">
 			
 				<div id="S-sns" class="google">
-					<a href="/oauth2/authorization/google" class="btn btn-sm btn-success active" role="button">
-  						<img alt="" src="/resources/img/snsgoogle.png">
-  					</a>
+					<jsp:include page="K_Include/S_google.jsp"></jsp:include>
 				</div>
 
 				<div id="K-sns" class="kakao">
-					<a id="kakao-login-btn" href="javascript:loginWithKakao()"> 
-						<img src="/resources/img/snskko.png" />
-					</a> 
-					<p id="token-result"></p>
+					<jsp:include page="K_Include/K_kakao.jsp"></jsp:include>
 				</div>
 
 				<div id="L-sns" class="naver">
-					<a href="">
-						<img src="/resources/img/snsnaver.png" />
-					</a>
+					<jsp:include page="K_Include/naverlogin.jsp"></jsp:include>
 				</div>
 				<div id="snsbox">
 					<p>SNS 로그인<p>
