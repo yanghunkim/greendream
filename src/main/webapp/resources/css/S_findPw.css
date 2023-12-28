@@ -185,11 +185,14 @@ tr:nth-child(4) td span {
 	margin-bottom: 5px;
 }
 
-.join-SNS span {
-	display: block;
+#K-sns {
+	position: relative;
+}
+#S-sns {
+	position: relative;
+	left: 40%;
 }
 
-.join-SNS img {
-	width: 300px;
-	height: 45px;
+#L-sns {
+	position: relative;
 }

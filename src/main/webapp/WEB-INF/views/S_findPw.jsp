@@ -95,21 +95,13 @@
 				SNS 가입 회원은 가입하신 SNS에서<br>아이디 찾기가 가능합니다.
 			</p>
 			<!-- SNS 링크 -->
-			<a href="#" class="button" role="button">
-				<span class="button-text">
-					<img src="/resources/img/snsgoogle.png">
-				</span>
-			</a>
-			<a href="#" class="button" role="button">
-				<span class="button-text">
-					<img src="/resources/img/snskko.png" />
-				</span>
-			</a>
-			<a href="#" class="button" role="button">
-				<span class="button-text">
-					<img src="/resources/img/snsgoogle.png">
-				</span>
-			</a>
+				<div id="S-sns" class="google">
+					<jsp:include page="K_Include/S_google.jsp"></jsp:include>
+				</div>
+
+				<div id="K-sns" class="kakao"></div>
+
+				<div id="L-sns" class="naver"></div>
 		</div>
 	</div>		
 </section>
