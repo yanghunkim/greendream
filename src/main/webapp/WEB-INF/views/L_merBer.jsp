@@ -10,6 +10,8 @@
 <link rel="stylesheet" href="/resources/css/L_merBer.css"/>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
+<!-- L_memberTerms 있던 script 입니다. -->
+<script src="/resources/js/L_memberTerms.js"></script>
 <!-- L_memberEmail 있던 script 입니다. -->
 <script src="/resources/js/L_memberEmail.js"></script>
 <!-- L_memberId 있던 script 입니다.  -->
@@ -18,6 +20,8 @@
 <script src="/resources/js/L_memberPassword.js"></script>
 <!-- L_memberPhone 있던 script 입니다. -->
 <script src="/resources/js/L_memberPhone.js"></script>
+<!-- L_MemberEtc 있던 script 입니다. -->
+<!-- <script src="/resources/js/L_MemberEtc.js"></script> -->
 <body>
 
 <jsp:include page="K_Include/herder.jsp"></jsp:include>
@@ -83,7 +87,7 @@
 					
 				</div>	
 				<div id="contanierClickbtnbox02">	
-					<input type="submit" name="next" id="next" disabled='disabled' value="다음" >
+					<input type="button" name="next01" id="next01" disabled='disabled' value="다음" >
 				</div>
 			</div>
 
@@ -111,7 +115,7 @@
 					<h4>이메일 인증 : </h4>
 					<input type="text" placeholder="인증번호 입력" id="email_auth_key">
 					<input type="button" id="check" value="번호 확인">
-					<input type="submit" name="next" id="next" disabled='disabled' value="다음" >
+					<input type="button" name="next02" id="next02" disabled='disabled' value="다음" >
 				</div>	
 			</div>
 		</div>
@@ -134,7 +138,7 @@
 							<label id="lbId"></label>
 						<input type="button" name="checkId" id="checkId" value="중복확인" >
 			  				 <!-- </form> -->
-						<input type="submit" name="next" id="next" disabled='disabled' value="다음">
+						<input type="button" name="next03" id="next03" disabled='disabled' value="다음">
 					</div>	
 				</div>
 <!-- </form> -->
@@ -167,7 +171,7 @@
 					<input type="checkbox" id="change" value="표시/숨김" onclick="pwce()">
 					<label id="lbPwc" onblur="ext()"></label>
 				</div>	
-					<input type="submit" name="next" id="next04" disabled='disabled' value="다음" >
+					<input type="button" name="next04" id="next04" disabled='disabled' value="다음" >
 				
 				<!-- </form> -->
 			</div>
@@ -187,12 +191,7 @@
 			</div>
 		<div id="contanierClickbtnbox05">
 <!-- 	<form action="memberEnd" method="post"> -->
-				<input type="hidden" name="id" id="id" value="${sessionScope.id}">
-				<input type="hidden" name="pw" id="pw" value="${sessionScope.pw}">
-				<input type="hidden" name="gender" id="gender" value="${sessionScope.gender}">
-				<input type="hidden" name="name" id="name" value="${sessionScope.name}">
-				<input type="hidden" name="birth" id="birth" value="${sessionScope.year}-${sessionScope.month}-${sessionScope.day}">
-				<input type="hidden" name="email" id="email" value="${sessionScope.email}">
+				
 			<div class="phonetext01">
 				<h4>휴대폰(필수)</h4>
 				<input type="text" name="phone" id="phone" placeholder="11자 이내로 작성 가능" maxlength="11" onKeyUp="validPhone()">
@@ -200,10 +199,10 @@
 				<label id="lbPhone"></label>
 			<div class="phonetext02">
 				<h4>보호자번호(선택)</h4>
-				<input type="text" name="pphone" id="pphone" placeholder="11자 이내로 작성 가능" maxlength="11" onKeyUp="validIdPPhone()">
+				<input type="text" name="pphone" id="pphone" placeholder="11자 이내로 작성 가능" maxlength="11" >
 			</div>
 					<label id="lbPPhone"></label>
-				<input type="submit" name="next" id="next" disabled='disabled' value="다음" >
+				<input type="submit" name="next05" id="next05" disabled='disabled' value="다음" >
 	<!-- </form> -->
 		</div> 
 	</div>
