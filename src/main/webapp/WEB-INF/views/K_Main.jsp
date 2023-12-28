@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
@@ -26,6 +27,38 @@
 	</div>
 	<!-- 최상단 메인 로고 끝입니다. -->
 
+	<!-- 로그읜 확인 -->
+	<div id="loginCheck">
+	<form method="post">
+		<c:choose>
+			<c:when test="${login.id eq null and sessionScope.FullName eq null and sessionScope.n_name eq null and sessionScope.k_nickname eq null}">
+				<input type="submit" formaction="login" value="로그인">
+				<input type="submit" formaction="memberTerms" value="회원가입">				
+			</c:when>
+			<c:when test="${login.name ne null}">
+				<h3>${login.name}님 환영합니다.</h3><br>
+				<input type="submit" formaction="memberdetail" value="내 정보">			
+				<input type="submit" formaction="logout" value="로그아웃">			
+			</c:when>
+			<c:when test="${sessionScope.FullName ne null}">
+				<h3>${sessionScope.FullName}님 환영합니다.</h3><br>
+				<input type="submit" value="구글 회원" disabled="disabled">			
+				<input type="submit" formaction="logout" value="로그아웃">			
+			</c:when>
+			<c:when test="${sessionScope.n_name ne null}">
+				<h3>${sessionScope.n_name}님 환영합니다.</h3><br>
+				<input type="submit" value="네이버 회원" disabled="disabled">			
+				<input type="submit" formaction="logout" value="로그아웃">			
+			</c:when>
+			<c:when test="${sessionScope.k_nickname ne null}">
+				<h3>${sessionScope.k_nickname}님 환영합니다.</h3><br>
+				<input type="submit" value="카카오 회원" disabled="disabled">			
+				<input type="submit" formaction="logout" value="로그아웃">			
+			</c:when>
+		</c:choose>
+	</form>
+	</div>
+
 	<!-- 상단 네비게이션 시작입니다. -->
 	<div id="nav">
 		<ul>
@@ -44,13 +77,13 @@
 		style="position: fixed; top: 0; z-index: -1;">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide"
-				style="background-image: url(img/title03.jpg);"></div>
+				style="background-image: url('img/title03.jpg');"></div>
 			<div class="swiper-slide"
-				style="background-image: url(img/title02.jpg);"></div>
+				style="background-image: url(../../resourses/img/title02.jpg);"></div>
 			<div class="swiper-slide"
-				style="background-image: url(img/title04.jpg);"></div>
+				style="background-image: url(../../resourses/img/title04.jpg);"></div>
 			<div class="swiper-slide"
-				style="background-image: url(img/title01.jpg);"></div>
+				style="background-image: url(../../resourses/img/title01.jpg);"></div>
 		</div>
 		<div class="swiper-pagination"></div>
 	</div>
