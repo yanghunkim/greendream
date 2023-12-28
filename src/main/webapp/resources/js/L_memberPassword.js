@@ -1,13 +1,13 @@
 
 // 입력 비번
-let pw = document.getElementById("pw");
-let pwc = document.getElementById("pwc");
-console.log(pw.type)
+
+
 // pw 정규식
 let regPw = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,20}$/;
 
 //비밀번호 양식 확인
 function validPw(){
+	let pw = document.getElementById("pw");
 	if(regPw.test(pw.value)){
 		//alert("제대로 입력함")
 		document.getElementById("lbPw").innerHTML="사용가능한 비밀번호 입니다.";
@@ -23,6 +23,8 @@ function validPw(){
 }
 // 비밀번호 정확도 확인
 function validPwc(){
+	let pw = document.getElementById("pw");
+	let pwc = document.getElementById("pwc");
 	if(pw.value!=pwc.value){
 		//alert("제대로 입력안함")
 		document.getElementById("lbPwc").innerHTML="비밀번호 불일치";
@@ -56,19 +58,19 @@ function pwce(){
 }
 // 다음 버튼
 function pf(){
-	const next = document.getElementById('next');
+	const next04 = document.getElementById('next04');
 	if(validPw()&&validPwc()){
-		next.disabled = false;	
+		next04.disabled = false;	
 	}else{
-		next.disabled = true;	
+		next04.disabled = true;	
 	}
 }	
 function pf2(){
-	const next = document.getElementById('next');
+	const next04 = document.getElementById('next04');
 	if(validPw()&&validPwc()){
-		next.disabled = false;	
+		next04.disabled = false;	
 	}else{
-		next.disabled = true;	
+		next04.disabled = true;	
 	}
 }	
 
