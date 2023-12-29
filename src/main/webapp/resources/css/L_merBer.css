@@ -1,4 +1,7 @@
-@charset "UTF-8";@charset "UTF-8";
+@charset "UTF-8"; 
+
+ @charset "UTF-8";
+
 * {
 	margin: 0 auto;
 	padding: 0;
@@ -6,44 +9,49 @@
 	background-size: cover;
 	list-style: none;
 	text-align: center;
-	font-family:'Noto Sans KR';
+	font-family: 'Noto Sans KR';
 }
 
 body {
-	background:#fffafa;
+	background: #fffafa;
 	color: #fffafa;
 }
+
 /*                                   여기서 부터는 회원가입 css 입니다.                                      */
 #next {
-    position: absolute;
-    top: 66%;
-  	left: 45.5%;
-    margin-top: 20px;
-    width: 110px;
-    height: 41px;
-    border-radius: 10px;
-    background: #fffafa;
-    color: #009999;
-    font-size: 20px;
+	position: absolute;
+	top: 66%;
+	left: 45.5%;
+	margin-top: 20px;
+	width: 110px;
+	height: 41px;
+	border-radius: 10px;
+	background: #fffafa;
+	color: #009999;
+	font-size: 20px;
 }
 
 #sectioncontainer01 {
 	position: relative;
-    display: none;
-    right: -100%;
+}
+
+#sectioncontainer01.on {
+	position: relative;
+	display: none;
+	left: -100%;
 }
 
 #sectioncontainer01 h2 {
 	padding: 15px;
 	color: #fffafa;
-    font-size: 33px;
+	font-size: 33px;
 }
 
 #sectioncontainer01 h3 {
 	position: relative;
-    left: -18%;
-    color: #fffafa;
-    font-size: 20px;
+	left: -18%;
+	color: #fffafa;
+	font-size: 20px;
 }
 
 #sectioncontainer01 a {
@@ -53,16 +61,16 @@ body {
 
 #sectioncontainer01 p {
 	font-size: 20px;
-    width: 371px;
+	width: 371px;
 }
 
 #sectioncontainer01 label {
-	margin:0;
+	margin: 0;
 }
 
 .containerbox {
 	width: 800px;
-    height: 600px;
+	height: 600px;
 	background: #009999;
 }
 
@@ -72,21 +80,20 @@ body {
 	color:#fffafa;
 	background-color: #009999;
 } */
-
 #contaninerCheckbox01 {
 	width: 500px;
-    height: 470px;
-    text-align: left;
+	height: 470px;
+	text-align: left;
 }
 
 #contanierClickbtnbox01 h4 {
-    color: #fffafa;
-    position: relative;
-    left: 2%;
-    bottom: -5%;
-    font-size: 22px;
-    padding-top: 5px;
-} 
+	color: #fffafa;
+	position: relative;
+	left: 2%;
+	bottom: -5%;
+	font-size: 22px;
+	padding-top: 5px;
+}
 
 #contanierClickbtnbox01, #contanierClickbtnbox01 h4 {
 	display: inline-block;
@@ -94,73 +101,78 @@ body {
 
 #all {
 	position: relative;
-    margin: 0;
-    top: 113%;
-    width: 20px;
-    height: 20px;
-    border-radius: 44%;
-    border-width: 0.5px;
-    background-color: #fffafa;
+	margin: 0;
+	top: 113%;
+	width: 20px;
+	height: 20px;
+	border-radius: 44%;
+	border-width: 0.5px;
+	background-color: #fffafa;
 }
 
 #checkboxscroll {
 	margin: 0;
-    width: 450px;
-    height: 365px;
-    padding-top: 10px;
-    text-align: left;
+	width: 450px;
+	height: 365px;
+	padding-top: 10px;
+	text-align: left;
 }
 
-#checkboxscroll label{
+#checkboxscroll label {
 	position: relative;
-    left: 25px;
-    display: inline-block;
-    text-align: left;
-    margin: 10px 0px 10px 0px;
-    display: inline-block;
-    width: 410px;
-    height: 70px;
-    font-size: 13px;
-    overflow: overlay;
-    border: 2px solid rgba(255, 255, 255, 1);
-    background-color: #ffffff;
-    color: #767678;
+	left: 25px;
+	display: inline-block;
+	text-align: left;
+	margin: 10px 0px 10px 0px;
+	display: inline-block;
+	width: 410px;
+	height: 70px;
+	font-size: 13px;
+	overflow: overlay;
+	border: 2px solid rgba(255, 255, 255, 1);
+	background-color: #ffffff;
+	color: #767678;
 }
 
 #contaninerCheckbox01 span {
 	width: 430px;
-    text-align: left;
+	text-align: left;
 	font-size: 19px;
-    display: inline-block;
-    color: #fffafa;
+	display: inline-block;
+	color: #fffafa;
 }
 
 #contaninerCheckbox01 span input {
-    width: 19px;
-    height: 19px;
-    margin-top: 3px;
+	width: 19px;
+	height: 19px;
+	margin-top: 3px;
 }
 
 /*                                   여기서 부터는 email css 입니다.                                      */
-
 #sectioncontainer02 {
 	position: relative;
-    display: none;
-    right: -100%;
+	display: none;
+	right: -100%;
+}
+
+#sectioncontainer02.on {
+	position: relative;
+	display: block;
+	right: 0%;
 }
 
 #sectioncontainer02 h2 {
 	padding: 15px;
-    font-size: 33px;
+	font-size: 33px;
 }
 
 #sectioncontainer02 h3 {
-    font-size: 20px;
+	font-size: 20px;
 }
 
 #contanierClickbtnbox02 h4 {
 	display: inline-block;
-    padding-right: 10px;
+	padding-right: 10px;
 }
 
 #start02 {
@@ -173,48 +185,47 @@ body {
 
 #contanierClickbtnbox02 div:nth-child(1) {
 	position: relative;
-    left: 15%;
-    width: 600px;
-    padding-bottom: 15px;
-    margin: 0;
+	left: 15%;
+	width: 600px;
+	padding-bottom: 15px;
+	margin: 0;
 }
 
 #contanierClickbtnbox02 div:nth-child(2) {
 	position: relative;
-    left: 8%;
-    width: 450px;
-    height: 230px;
-    margin: 0;
+	left: 8%;
+	width: 450px;
+	height: 230px;
+	margin: 0;
 }
 
 #sectioncontainer02 button {
 	width: 97px;
-    height: 27px;
-    background: #FEFEFE;
-    color: #009999;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 0;
+	height: 27px;
+	background: #FEFEFE;
+	color: #009999;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	margin: 0;
 }
 
 #sectioncontainer02 input {
 	display: inline-block;
-    text-align: left;
-    text-indent: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 0;
-    background: #FEFEFE;
-    color: #009999;
-    margin-right: 5px;
+	text-align: left;
+	text-indent: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	margin: 0;
+	background: #FEFEFE;
+	color: #009999;
+	margin-right: 5px;
 }
 
 #sectioncontainer02 #next {
-    position: absolute;
-    top: 45%;
-    left: 62%;
-    font-size: 25px;
-    text-align: center;
-    text-indent: 0;
-    
+	position: absolute;
+	top: 45%;
+	left: 62%;
+	font-size: 25px;
+	text-align: center;
+	text-indent: 0;
 }
 
 #contanierClickbtnbox02 div:nth-child(2) h4 {
@@ -223,44 +234,49 @@ body {
 
 #sectioncontainer02 #check {
 	width: 70px;
-    height: 30px;
-    text-align: center;
-    text-indent: 0;
-    position: relative;
-    left: 10px;
+	height: 30px;
+	text-align: center;
+	text-indent: 0;
+	position: relative;
+	left: 10px;
 }
+
 #sectioncontainer02 div:nth-child(2) {
 	text-align: center;
 }
 
-#sectioncontainer02 #email  {
+#sectioncontainer02 #email {
 	width: 350px;
-    height: 40px;
-    
+	height: 40px;
 }
 
 #sectioncontainer02 #email_auth_key {
 	position: relative;
-    left: 2%;
-    width: 150PX;
-    height: 40px;
+	left: 2%;
+	width: 150PX;
+	height: 40px;
 }
 
 /*                                     여기서부터는 아이디 css 만들기 입니다.                                  */
-
 #sectioncontainer03 {
 	position: relative;
-    display: none;
-    right: -100%;
+	display: none;
+	right: -100%;
+}
+
+#sectioncontainer03.on {
+	position: relative;
+	display: block;
+	right: 0%;
 }
 
 #sectioncontainer03 #ti {
-    padding-top: 14%;	
+	padding-top: 14%;
 }
 
-#sectioncontainer03 #ti > h2 {
+#sectioncontainer03 #ti>h2 {
 	padding: 15px;
-    font-size: 33px;
+	font-size: 33px;
 }
 
 #sectioncontainer03 #please03 {
@@ -272,29 +288,31 @@ body {
 	display: inline-block;
 }
 
-#contanierClickbtnbox03 > div {
-    display: inline-block;
-    width: 650px;
-    height: 326px;
+#contanierClickbtnbox03>div {
+	display: inline-block;
+	width: 650px;
+	height: 326px;
 }
+
 #sectioncontainer03 #i {
 	width: 80px;
-    height: 40px;
-    font-size: 24px;
-    font-weight: 700;
-    padding-right: 20px;
+	height: 40px;
+	font-size: 24px;
+	font-weight: 700;
+	padding-right: 20px;
 }
+
 #sectioncontainer03 #id {
 	width: 300px;
-    height: 40px;
-    display: inline-block;
-    text-align: left;
-    text-indent: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 0;
-    background: #FEFEFE;
-    position: relative;
-    bottom: 1%;
+	height: 40px;
+	display: inline-block;
+	text-align: left;
+	text-indent: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	margin: 0;
+	background: #FEFEFE;
+	position: relative;
+	bottom: 1%;
 }
 
 #sectioncontainer03 #lbId {
@@ -302,199 +320,304 @@ body {
 }
 
 #sectioncontainer03 #checkId {
-    width: 70px;
-    height: 30px;
-    text-align: center;
-    text-indent: 0;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background: #fffafa;
-    color: #009999;
-    position: relative;
-    left: 3%;
-    bottom: 1%;
+	width: 70px;
+	height: 30px;
+	text-align: center;
+	text-indent: 0;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	background: #fffafa;
+	color: #009999;
+	position: relative;
+	left: 3%;
+	bottom: 1%;
 }
 
 #contanierClickbtnbox03 #next {
 	position: relative;
-    top: 25%;
-    left: -44%;
-    border: 1px solid rgba(0, 0, 0, 0.1);;
+	top: 25%;
+	left: -44%;
+	border: 1px solid rgba(0, 0, 0, 0.1);;
 }
 
 /*										여기서부터는 비밀번호 입력 css 입니다.                                   */
 #sectioncontainer04 {
 	position: relative;
-    display: none;
-    right: -100%;
+	display: none;
+	right: -100%;
 }
+
+#sectioncontainer04.on {
+	position: relative;
+	display: block;
+	right: 0%;
+}
+
 #sectioncontainer04 #me {
 	width: 800px;
-    height: 600px;
-    background: #009999;
+	height: 600px;
+	background: #009999;
 }
 
 #sectioncontainer04 #ti {
-	padding-top: 14%;	
+	padding-top: 14%;
 }
 
-#sectioncontainer04 #ti h3{
+#sectioncontainer04 #ti h3 {
 	font-size: 20px;
-	padding: 20px 0px 30px 0px	
+	padding: 20px 0px 30px 0px
 }
 
-#sectioncontainer04 #me div:not(:nth-child(1)) {
+#sectioncontainer04 #me div:not (:nth-child(1) ) {
 	display: inline-block;
 }
 
 #sectioncontainer04 #p {
-    display: inline-block;
-    width: 100%;
-    height: 50px;
+	display: inline-block;
+	width: 100%;
+	height: 50px;
 }
 
 #sectioncontainer04 #p h4 {
-	display:inline-block;
+	display: inline-block;
 	color: #fffafa;
-    position: relative;
+	position: relative;
 	left: -2%;
-    bottom: -5%;
-    font-size: 22px;
-    padding-top: 5px;
+	bottom: -5%;
+	font-size: 22px;
+	padding-top: 5px;
 }
 
 #sectioncontainer04 #pw {
 	width: 300px;
-    height: 40px;
-    display: inline-block;
-    text-align: left;
-    text-indent: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 0;
-    background: #FEFEFE;
-    position: relative;
+	height: 40px;
+	display: inline-block;
+	text-align: left;
+	text-indent: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	margin: 0;
+	background: #FEFEFE;
+	position: relative;
 }
 
 #sectioncontainer04 #pws input:nth-child(2) {
 	width: 25px;
-    height: 25px;
-    margin: 0px 0px 0px 10px;
-    position: relative;
-    top: 6px;
-    right: 5px;
+	height: 25px;
+	margin: 0px 0px 0px 10px;
+	position: relative;
+	top: 6px;
+	right: 5px;
 }
 
 #sectioncontainer04 #kp h4 {
 	display: inline-block;
-    color: #fffafa;
-    position: relative;
-    left: 4%;
-    bottom: -5%;
-    font-size: 22px;
-    padding-top: 5px;
+	color: #fffafa;
+	position: relative;
+	left: 4%;
+	bottom: -5%;
+	font-size: 22px;
+	padding-top: 5px;
 }
 
 #sectioncontainer04 #pwc {
 	width: 300px;
-    height: 40px;
-    display: inline-block;
-    text-align: left;
-    text-indent: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 0;
-    background: #FEFEFE;
-    position: relative;
-    left: 7%;
+	height: 40px;
+	display: inline-block;
+	text-align: left;
+	text-indent: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	margin: 0;
+	background: #FEFEFE;
+	position: relative;
+	left: 7%;
 }
 
-#sectioncontainer04 #kp input:nth-child(3){
+#sectioncontainer04 #kp input:nth-child(3) {
 	width: 25px;
-    height: 25px;
-    margin: 0px 0px 0px 10px;
-    position: relative;
-    top: 6px;
-    left: 6%;
+	height: 25px;
+	margin: 0px 0px 0px 10px;
+	position: relative;
+	top: 6px;
+	left: 6%;
 }
 
 #next04 {
 	margin-top: 20px;
-    width: 110px;
-    height: 41px;
-    border-radius: 10px;
-    background: #fffafa;
-    color: #009999;
-    font-size: 20px;
-    position: relative;
-    top: 10%;
-    right: 26%;
+	width: 110px;
+	height: 41px;
+	border-radius: 10px;
+	background: #fffafa;
+	color: #009999;
+	font-size: 20px;
+	position: relative;
+	top: 10%;
+	right: 26%;
 }
 
 #sectioncontainer05 {
 	position: relative;
-    display: none;
-    right: -100%;
-}
-#contanierClickbtnbox05 {
-	width: 800px;
-    height: 326px;
-    background: #009999;
+	display: none;
+	right: -100%;
 }
 
-#sectioncontainer05 div{
+#sectioncontainer05.on {
+	position: relative;
+	display: block;
+	right: 0%;
+}
+
+#contanierClickbtnbox05 {
+	width: 800px;
+	height: 326px;
+	background: #009999;
+}
+
+#sectioncontainer05 div {
 	padding: 15px 0px 0px 0px;
 }
+
 #sectioncontainer05 label {
 	display: none;
 }
-#sectioncontainer05 #start03 h2{
+
+#sectioncontainer05 #start03 h2 {
 	padding-top: 14%;
 }
 
 #sectioncontainer05 #start03 h3 {
 	font-size: 20px;
-	padding: 20px 0px 30px 0px	
+	padding: 20px 0px 30px 0px
 }
+
 .phonetext01 h4 {
 	display: inline-block;
-    color: #fffafa;
-    position: relative;
-    left: -2%;
-    font-size: 22px;
+	color: #fffafa;
+	position: relative;
+	left: -2%;
+	font-size: 22px;
 }
+
 .phonetext02 h4 {
-	display:inline-block;
-    color: #fffafa;
-    position: relative;
-    left: -4%;
-    bottom: -5%;
-    font-size: 22px;
+	display: inline-block;
+	color: #fffafa;
+	position: relative;
+	left: -4%;
+	bottom: -5%;
+	font-size: 22px;
 }
 
 #sectioncontainer05 #phone {
 	width: 300px;
-    height: 40px;
-    display: inline-block;
-    text-align: left;
-    text-indent: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 0;
-    background: #FEFEFE;
-    position: relative;
-    left: 1%;
+	height: 40px;
+	display: inline-block;
+	text-align: left;
+	text-indent: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	margin: 0;
+	background: #FEFEFE;
+	position: relative;
+	left: 1%;
 }
+
 #sectioncontainer05 #pphone {
 	width: 300px;
-    height: 40px;
-    display: inline-block;
-    text-align: left;
-    text-indent: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 0;
-    background: #FEFEFE;
-    position: relative;
-    left: -1.5%;
+	height: 40px;
+	display: inline-block;
+	text-align: left;
+	text-indent: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	margin: 0;
+	background: #FEFEFE;
+	position: relative;
+	left: -1.5%;
 }
 
 #sectioncontainer05 #next {
 	top: 52%;
-    left: 45%;
+	left: 45%;
 }
+
+#sectioncontainer06 {
+	position: relative;
+	display: none;
+	right: -100%;
+}
+
+#sectioncontainer06.on {
+	position: relative;
+	display: block;
+	right: 0%;
+}
+
+#contanierClickbtnbox06 {
+	background: #009999;
+}
+
+#contanierClickbtnbox06 h3 {
+	padding-top: 14%;
+}
+#contanierClickbtnbox06 select {
+	display: inline-block;
+	text-align: left;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	margin: 0;
+	background: #FEFEFE;
+	margin-right: 5px;
+}
+
+#contanierClickbtnbox06 select option {
+	color:fieldtext;
+}
+
+#contanierClickbtnbox06 input {
+	display: inline-block;
+	text-align: left;
+	text-indent: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	margin: 0;
+	background: #FEFEFE;
+}
+
+#section06-box h4 {
+	display: inline-block;
+	padding-right: 10px;
+	color: #fffafa;
+	position: relative;
+	font-size: 22px;
+	margin: 0;
+}
+
+.h4box01 {
+	padding-top: 35px;
+}
+
+.h4box02 {
+	left: -32%;
+}
+
+.h4box03 {
+	padding-top: 25px;
+}
+
+#contanierClickbtnbox06 .box {
+	position: relative;
+	left: -12%;
+}
+
+#contanierClickbtnbox06 h4::nth-child(3) {
+	padding-top: 25px;
+}
+
+#contanierClickbtnbox06 div {
+	display: inline-block;
+}
+
+#section06-box {
+	display: inline-block;
+	height: 326px;
+}
+
+#info__birth box {
+	display: inline-block;
+}
+
+
