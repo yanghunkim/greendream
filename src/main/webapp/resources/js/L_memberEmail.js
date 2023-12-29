@@ -1,7 +1,4 @@
 
-//다음 버튼
-const next02 = document.getElementById('next02');
-console.log(next02);
 
 $(document).ready(function() { 
  	
