@@ -24,7 +24,7 @@ function validName(){
 		return false;
 	}
 }
-//다음 버튼
+
 
 
 // 생년 월일 
