@@ -62,7 +62,30 @@ public class MemberController {
 	public String m1() {
 		return  "L_merBer";
 	}
+	@PostMapping("member12")
+	public String m12() {
+		return  "S_login";
+	}
+	@ResponseBody
+	@PostMapping("memberAdd")
+	public String mea(MemberDTO member, String email, String id, String pw, String phone, String pphone
+			, String name, String gender, String birth) {
+		
+		
+		String result = "ok";
+		 
+		/*    ls.naverAdd(naver);*/
+		ls.memberAdd(member);
+		
+		System.out.println(id);
+	    if(id != null) {
 	
+	        result = "no";
+	    }
+	    
+	    return result;
+		
+	}
 	@PostMapping("memberEmail")
 	public String mee() {
 		return "L_member/L_memberEmail";
